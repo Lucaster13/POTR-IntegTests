@@ -1,0 +1,8 @@
+{
+    "TestNet": {
+        "coin_shop": 166213066
+    },
+    "MainNet": {
+        "coin_shop": null
+    }
+}

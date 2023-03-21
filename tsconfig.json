@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "target": "ESNext",
+        "lib": ["es5", "dom"],
+        "types": ["cypress", "node"],
+        "moduleResolution": "node",
+        "resolveJsonModule": true,
+        "allowSyntheticDefaultImports": true
+    },
+    "include": ["**/*.ts", "../tests/landing-page.cy.ts", "./e2e/landing-page.cy.ts"]
+}

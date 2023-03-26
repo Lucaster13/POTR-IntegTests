@@ -1,5 +1,3 @@
-const Selectors = {
+export default {
     peraWalletConnectButton: ".pera-wallet-modal",
 };
-
-export default Selectors;

@@ -1,5 +1,4 @@
-import { dismissLandingPage, TestIds, toggleCoinShopPause } from "../utils/index";
-import { HOME_PAGE, PROFILE_PAGE } from "../utils/urls";
+import { TestIds, HOME_PAGE, PROFILE_PAGE } from "../../constants";
 
 describe("Page - Home", () => {
     beforeEach(() => {
@@ -7,7 +6,7 @@ describe("Page - Home", () => {
         cy.clearAllCookies();
         cy.clearAllLocalStorage();
         cy.viewport("macbook-16");
-        dismissLandingPage();
+        cy.dismissLandingPage();
         cy.visit(HOME_PAGE);
     });
 
@@ -22,16 +21,14 @@ describe("Page - Home", () => {
             cy.url().should("equal", PROFILE_PAGE);
         });
         it.only("should show the correct ruins status based on coin shop isPaused flag", () => {
-            cy.connectWallet();
-            cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("active");
-            cy.toggleCoinShopPause()
-                .then(() => {
-                    cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("inactive");
-                })
+            cy.connectWallet()
+                .then(() => cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("active"))
                 .then(cy.toggleCoinShopPause)
-                .then(() => {
-                    cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("active");
-                });
+                .then(() =>
+                    cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("inactive", { timeout: 6000 }),
+                )
+                .then(cy.toggleCoinShopPause)
+                .then(() => cy.byTestId(TestIds.HomePage.dashboard.ruins.status).contains("active", { timeout: 6000 }));
         });
         it("should display correct balances when restocking ruins", () => {
             cy.connectWallet();

@@ -1,5 +1,4 @@
-import { dismissLandingPage, TestIds } from "../utils/index";
-import { HOME_PAGE } from "../utils/urls";
+import { HOME_PAGE, TestIds } from "../../constants";
 
 describe("Page - Landing", () => {
     beforeEach(() => {
@@ -11,17 +10,17 @@ describe("Page - Landing", () => {
     });
 
     it("should dismiss landing page when user clicks enter kingdom", () => {
-        dismissLandingPage();
+        cy.dismissLandingPage();
     });
 
     it("should not show landing page on reload after user has already clicked enter kingdom", () => {
-        dismissLandingPage();
+        cy.dismissLandingPage();
         cy.reload();
         cy.byTestId(TestIds.LandingPage.container).should("not.exist");
     });
 
     it("should open landing page when user clicks sidebar title", () => {
-        dismissLandingPage();
+        cy.dismissLandingPage();
         cy.byTestId(TestIds.Nav.toggle).click();
         cy.byTestId(TestIds.Nav.title).click();
         cy.byTestId(TestIds.LandingPage.container).should("be.visible");

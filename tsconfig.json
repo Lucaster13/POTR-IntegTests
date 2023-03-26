@@ -5,7 +5,11 @@
         "types": ["cypress", "node"],
         "moduleResolution": "node",
         "resolveJsonModule": true,
-        "allowSyntheticDefaultImports": true
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "noEmit": true,
+        "baseUrl": "./src"
     },
-    "include": ["**/*.ts", "../tests/landing-page.cy.ts", "./e2e/landing-page.cy.ts"]
+    "include": ["./src/**/*"],
+    "exclude": ["node_modules"]
 }

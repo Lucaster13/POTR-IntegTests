@@ -62,6 +62,7 @@ interface CoinShopHandle extends ContractHandle {
     a: CoinShopApi;
     v: CoinShopViews;
     e: CoinShopEvents;
+    safeApis: CoinShopApi;
 }
 
 export {

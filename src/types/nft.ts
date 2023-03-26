@@ -3,7 +3,17 @@ import { AsaId } from "./network";
 type TraitValue = string | number;
 type TraitType = "Background" | "Class" | "Body" | "Head" | "Eyes" | "Mouth" | "Back" | "Power";
 type BaseClassType = "Humanoid" | "Phantom" | "Golem" | "Dragon";
-type ClassType = "Berserker" | "Ranger" | "Wizard" | "Crusader" | "Necromancer" | "Assassin" | "Phantom" | "Archangel" | "Dragon" | "Golem";
+type ClassType =
+    | "Berserker"
+    | "Ranger"
+    | "Wizard"
+    | "Crusader"
+    | "Necromancer"
+    | "Assassin"
+    | "Phantom"
+    | "Archangel"
+    | "Dragon"
+    | "Golem";
 
 interface PotrTraits {
     Background: string;
@@ -22,7 +32,7 @@ interface Arc69Metadata {
     description: string;
     external_url: string;
     mime_type: "image/png";
-    properties: PotrTraits | {};
+    properties: PotrTraits;
 }
 
 interface PotrMetadata {

@@ -1,5 +1,12 @@
 import { ACCOUNTS, TestIds, HOME_PAGE, FULL_SERVER_ENDPOINTS } from "../../constants";
-import { cleanupAlgo, cleanupCoinShopAssets, fundUser, restockCoinShop, toggleCoinShopPause } from "../../utils";
+import {
+    cleanAlgo,
+    cleanCoinShop,
+    cleanCoinShopAssets,
+    fundUser,
+    restockCoinShop,
+    toggleCoinShopPause,
+} from "../../utils";
 import "./commands";
 import axios from "axios";
 
@@ -37,9 +44,10 @@ Cypress.Commands.add("dismissLandingPage", () => {
 
 Cypress.Commands.add("toggleCoinShopPause", toggleCoinShopPause);
 Cypress.Commands.add("fundUser", fundUser);
-Cypress.Commands.add("cleanupCoinShopAssets", cleanupCoinShopAssets);
+Cypress.Commands.add("cleanCoinShopAssets", cleanCoinShopAssets);
 Cypress.Commands.add("restockCoinShop", restockCoinShop);
-Cypress.Commands.add("cleanAlgo", cleanupAlgo);
+Cypress.Commands.add("cleanAlgo", cleanAlgo);
+Cypress.Commands.add("cleanCoinShop", cleanCoinShop);
 
 declare global {
     namespace Cypress {
@@ -50,8 +58,9 @@ declare global {
             toggleCoinShopPause: typeof toggleCoinShopPause;
             restockCoinShop: typeof restockCoinShop;
             fundUser: typeof fundUser;
-            cleanupCoinShopAssets: typeof cleanupCoinShopAssets;
-            cleanAlgo: typeof cleanupAlgo;
+            cleanCoinShopAssets: typeof cleanCoinShopAssets;
+            cleanAlgo: typeof cleanAlgo;
+            cleanCoinShop: typeof cleanCoinShop;
         }
     }
 }

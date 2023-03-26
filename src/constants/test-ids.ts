@@ -10,7 +10,11 @@ export default {
     HomePage: {
         dashboard: {
             signIn: "dashboard-sign-in",
-            profile: { container: "dashboard-profile", button: "dashboard-profile-button" },
+            profile: {
+                container: "dashboard-profile",
+                button: "dashboard-profile-button",
+                avatar: "dashboard-profile-avatar",
+            },
             ruins: {
                 container: "dashboard-ruins",
                 status: "dashboard-ruins-status",

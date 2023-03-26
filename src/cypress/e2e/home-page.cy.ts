@@ -27,7 +27,6 @@ describe("Page - Home", () => {
         it.only("should go to profile page when avatar is clicked", () => {
             cy.connectWallet();
             cy.byTestId(TestIds.HomePage.dashboard.profile.avatar).should("be.visible");
-
             cy.byTestId(TestIds.HomePage.dashboard.profile.button).click({ force: true });
             cy.url().should("equal", PROFILE_PAGE);
         });

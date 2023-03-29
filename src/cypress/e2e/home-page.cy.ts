@@ -24,7 +24,7 @@ describe("Page - Home", () => {
             cy.byTestId(TestIds.HomePage.dashboard.signIn).should("be.visible");
             cy.byTestId(TestIds.HomePage.dashboard.profile.container).should("not.exist");
         });
-        it.only("should go to profile page when avatar is clicked", () => {
+        it("should go to profile page when avatar is clicked", () => {
             cy.connectWallet();
             cy.byTestId(TestIds.HomePage.dashboard.profile.avatar).should("be.visible");
             cy.byTestId(TestIds.HomePage.dashboard.profile.button).click({ force: true });

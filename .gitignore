@@ -2,5 +2,6 @@
 node_modules
 .vscode
 build
+!src/contracts/build
 coverage
 .secrets.*

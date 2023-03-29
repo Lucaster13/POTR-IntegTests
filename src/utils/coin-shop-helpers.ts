@@ -1,7 +1,10 @@
-import { ACCOUNTS, ASA_IDS, COIN_TYPES, CONTRACT_IDS } from "../constants";
-import { CoinShopBackend } from "../contracts";
+import { ASA_IDS, CONTRACT_IDS } from "data";
+import { ACCOUNTS, COIN_TYPES } from "../constants";
+import CONTRACT_BACKENDS from "../contracts";
 import { AsaId, CoinShopHandle, ReachAccount } from "../types";
 import { createReachApi } from "./index";
+
+const backend = CONTRACT_BACKENDS.coin_shop;
 
 async function fundUser(algo: number, coins: [number, number, number]) {
     console.log("funding user", { algo, coins });
@@ -71,7 +74,7 @@ async function restockCoinShop(supply: [number, number, number]) {
     // connect admin account
     const admin: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.admin.mnemonic);
     // connect to contract
-    const contract = await admin.contract<CoinShopHandle>(CoinShopBackend, CONTRACT_IDS.TestNet.coin_shop);
+    const contract = await admin.contract<CoinShopHandle>(backend, CONTRACT_IDS.TestNet.coin_shop);
     // deposit coins to contract
     await contract.a.controller_api.restock(supply.map((amt) => reach.bigNumberify(amt)));
     console.log("successfully restocked coin shop", { supply });
@@ -83,7 +86,7 @@ async function toggleCoinShopPause() {
     // connect admin account
     const admin: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.admin.mnemonic);
     // connect to contract
-    const contract = await admin.contract<CoinShopHandle>(CoinShopBackend, CONTRACT_IDS.TestNet.coin_shop);
+    const contract = await admin.contract<CoinShopHandle>(backend, CONTRACT_IDS.TestNet.coin_shop);
     // extract isPaused value from maybe and return it
     return contract.safeApis.controller_api.toggle_pause().then((maybePause) => {
         const [_, isPaused] = maybePause;
@@ -99,7 +102,7 @@ async function cleanCoinShop() {
     // connect admin account
     const admin: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.admin.mnemonic);
     // connect to contract
-    const contract = await admin.contract<CoinShopHandle>(CoinShopBackend, CONTRACT_IDS.TestNet.coin_shop);
+    const contract = await admin.contract<CoinShopHandle>(CONTRACT_BACKENDS, CONTRACT_IDS.TestNet.coin_shop);
 
     const [_, isPaused] = await contract.v.is_paused();
 

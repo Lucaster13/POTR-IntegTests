@@ -1,7 +1,7 @@
 import { EventMap, EventStream } from "@reach-sh/stdlib/dist/types/shared_impl";
 import { CoinIds, Coins } from "../coin";
 import { AsaId, NetworkAddress } from "../network";
-import { DeployerInterface, ApiFn, ContractHandle, Maybe } from "./base";
+import { DeployerInterface, ApiFn, ContractHandle, Maybe, ParticipantInterface } from "./base";
 
 /*
 
@@ -10,20 +10,23 @@ import { DeployerInterface, ApiFn, ContractHandle, Maybe } from "./base";
 */
 
 // Interface for running contract as admin
-interface CoinShopAdminInterface extends DeployerInterface {
+interface CoinShopDeployerInterface extends DeployerInterface {
     // pass in coin asa ids
     coin_asa_ids: CoinIds;
 }
 
+type CoinShopAdminInterface = ParticipantInterface;
+
 // names for all events, views and apis
-type CoinShopEvent = "restock" | "purchase" | "price_change";
+type CoinShopEvent = "restock" | "purchase" | "price_change" | "withdraw";
 type CoinShopView = "is_paused" | "coin_prices" | "coin_supply";
 type CoinShopBuyerApiFunction = "purchase_bronze" | "purchase_silver" | "purchase_gold";
-type CoinShopControllerApiFunction = "restock" | "set_prices" | "toggle_pause" | "terminate";
+type CoinShopControllerApiFunction = "restock" | "set_prices" | "toggle_pause" | "terminate" | "withdraw";
 
 // types for all view values
 type CoinShopPrices = Coins;
 type CoinShopSupply = Coins;
+type CoinShopWithdrawal = Coins;
 type CoinShopIsPaused = boolean;
 
 // interfaces for APIS
@@ -32,6 +35,7 @@ interface CoinShopControllerApi extends Record<CoinShopControllerApiFunction, Ap
     set_prices: (pr: CoinShopPrices) => Promise<Maybe<boolean>>;
     toggle_pause: () => Promise<Maybe<boolean>>;
     terminate: () => Promise<Maybe<boolean>>;
+    withdraw: (wdr: CoinShopWithdrawal) => Promise<Maybe<boolean>>;
 }
 interface CoinShopBuyerApi extends Record<CoinShopBuyerApiFunction, ApiFn> {
     purchase_bronze: () => Promise<Maybe<boolean>>;
@@ -51,6 +55,8 @@ interface CoinShopEvents extends Record<CoinShopEvent, EventMap> {
     restock: EventStream<Coins>;
     purchase: EventStream<[AsaId, NetworkAddress]>;
     price_change: EventStream<Coins>;
+    withdraw: EventStream<Coins>;
+    terminate: EventStream<boolean>;
 }
 
 interface CoinShopApi {
@@ -62,10 +68,14 @@ interface CoinShopHandle extends ContractHandle {
     a: CoinShopApi;
     v: CoinShopViews;
     e: CoinShopEvents;
-    safeApis: CoinShopApi;
+    p: {
+        Admin: (x: CoinShopAdminInterface) => Promise<void>;
+        Deployer: (x: Partial<CoinShopDeployerInterface>) => Promise<void>;
+    };
 }
 
 export {
+    CoinShopDeployerInterface,
     CoinShopAdminInterface,
     CoinShopEvent,
     CoinShopView,

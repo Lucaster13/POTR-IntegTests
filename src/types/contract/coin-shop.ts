@@ -26,7 +26,6 @@ type CoinShopControllerApiFunction = "restock" | "set_prices" | "toggle_pause" |
 // types for all view values
 type CoinShopPrices = Coins;
 type CoinShopSupply = Coins;
-type CoinShopWithdrawal = Coins;
 type CoinShopIsPaused = boolean;
 
 // interfaces for APIS
@@ -35,7 +34,7 @@ interface CoinShopControllerApi extends Record<CoinShopControllerApiFunction, Ap
     set_prices: (pr: CoinShopPrices) => Promise<Maybe<boolean>>;
     toggle_pause: () => Promise<Maybe<boolean>>;
     terminate: () => Promise<Maybe<boolean>>;
-    withdraw: (wdr: CoinShopWithdrawal) => Promise<Maybe<boolean>>;
+    withdraw: () => Promise<Maybe<boolean>>;
 }
 interface CoinShopBuyerApi extends Record<CoinShopBuyerApiFunction, ApiFn> {
     purchase_bronze: () => Promise<Maybe<boolean>>;

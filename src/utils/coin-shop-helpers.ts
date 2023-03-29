@@ -30,6 +30,12 @@ async function cleanCoinShopAssets() {
     const admin: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.admin.mnemonic);
     const user: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.user.mnemonic);
 
+    // connect to contract
+    const contract = await admin.contract<CoinShopHandle>(backend, CONTRACT_IDS.TestNet.coin_shop);
+
+    // withdraw coins from contract
+    await contract.a.controller_api.withdraw();
+
     // send coins back to admin account
     await Promise.all(
         ASA_IDS.TestNet.coin.map(async (coinId, idx) => {
@@ -102,7 +108,7 @@ async function cleanCoinShop() {
     // connect admin account
     const admin: ReachAccount = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.admin.mnemonic);
     // connect to contract
-    const contract = await admin.contract<CoinShopHandle>(CONTRACT_BACKENDS, CONTRACT_IDS.TestNet.coin_shop);
+    const contract = await admin.contract<CoinShopHandle>(backend, CONTRACT_IDS.TestNet.coin_shop);
 
     const [_, isPaused] = await contract.v.is_paused();
 

@@ -20,13 +20,13 @@ byte base64(Ag==)
 app_global_get
 concat
 preamble:
-pushbytess base64(A6+jPA==) base64(Ch0mSQ==) base64(FCCDHw==) base64(HI825Q==) base64(Pg06aQ==) base64(R5E3lA==) base64(S18iTg==) base64(iO3+1g==) base64(l4t5OA==) base64(rigdzQ==) base64(tsF5+Q==) base64(xaQ7EQ==) base64(1tGMcA==) base64(39kjKA==) base64(7i53EQ==)
+pushbytess base64(A6+jPA==) base64(Ch0mSQ==) base64(FCCDHw==) base64(HI825Q==) base64(Pg06aQ==) base64(RlzXZg==) base64(R5E3lA==) base64(S18iTg==) base64(l4t5OA==) base64(rigdzQ==) base64(tsF5+Q==) base64(xaQ7EQ==) base64(1tGMcA==) base64(39kjKA==) base64(7i53EQ==)
 txna ApplicationArgs 0
-match _reachp_0 _reachp_3 is_paused__byte61XYhmPXYss6LXZIGcOmPGCNFlmHlLGfWrm7xFsGEBc_ controller_api_sZGOkjDEzF6vXjr7iatB98S1R8Lgi0gUSY6NWz2LUrds_ controller_api_toPganL3IMIy1g1yc_dZQAN1KBzPJVXUPycTxarKJoDQ_ controller_api_t_Z9wmzV5mC_Pvgg5lhnigQhAb9ZgRS0Ss0IHbNXkGp8_ coin_supply___uik9ePTbV5CYgVkzPOb0zHYXJs93ICx7RXAE0xk_i_mgM_ controller_api_whzGSsJRwUP5uZQEA_uSLMRKzj7lHESauLWqhr5vTSKE_ controller_api_rcBtj2YWUMmz7g7mT6a6_1abRutK3PdoPfZapxsrYu2o_ buyer_api_purcha85x_xQzlCDV1atZqoOlpqVuFEcGSsWIdKTDizwfivSI_ _reachp_4 buyer_api_purchaL0o3MzihkceD3TEFOjCJ14_gkBw8sYKEo1yjdzT_O_U_ buyer_api_purchaP2in5Of5hUD_em5dMqGq4rSX9xeIfDNXmIF9neZIP1s_ _reachp_1 coin_prices___uivbsEz_824thmSIVcjO3AEXNFnN4eTK82lC0hOX4zfwA_
+match _reachp_0 _reachp_3 is_paused__byte61XYhmPXYss6LXZIGcOmPGCNFlmHlLGfWrm7xFsGEBc_ controller_api_sZGOkjDEzF6vXjr7iatB98S1R8Lgi0gUSY6NWz2LUrds_ controller_api_toPganL3IMIy1g1yc_dZQAN1KBzPJVXUPycTxarKJoDQ_ controller_api_wb0XtdEKqi8WNStHAlw2K4jvyjsherZmQDbr9M81m3CY_ controller_api_t_Z9wmzV5mC_Pvgg5lhnigQhAb9ZgRS0Ss0IHbNXkGp8_ coin_supply___uik9ePTbV5CYgVkzPOb0zHYXJs93ICx7RXAE0xk_i_mgM_ controller_api_rcBtj2YWUMmz7g7mT6a6_1abRutK3PdoPfZapxsrYu2o_ buyer_api_purcha85x_xQzlCDV1atZqoOlpqVuFEcGSsWIdKTDizwfivSI_ _reachp_4 buyer_api_purchaL0o3MzihkceD3TEFOjCJ14_gkBw8sYKEo1yjdzT_O_U_ buyer_api_purchaP2in5Of5hUD_em5dMqGq4rSX9xeIfDNXmIF9neZIP1s_ _reachp_1 coin_prices___uivbsEz_824thmSIVcjO3AEXNFnN4eTK82lC0hOX4zfwA_
 errl:
 err
 _api_buyer_api_purchase_bronze4:
-load 23 // isAllowed/6973
+load 23 // isAllowed/6169
 assert
 // ^ Claim: contract is currently inactive
 // at reach standard library:57:5:application
@@ -35,7 +35,7 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:41:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 21 // v6975
+load 21 // v6171
 int 1
 >=
 assert
@@ -46,58 +46,58 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:169:41:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
-load 16 // v6982
+load 25 // netBalance/6137
+load 16 // v6178
 +
 dup
-store 11 // v7760
+store 11 // v6899
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 16 // v6982
+load 16 // v6178
 callsub l21_LF_checkTxn_False
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 11 // v7760
+load 11 // v6899
 dup
 -
 dup
-store 12 // v7819
+store 12 // v6958
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at ./src/contracts/coin_shop.rsh:178:64:application
 // at ./src/contracts/coin_shop.rsh:176:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:176:27:function exp)
-load 11 // v7760
+load 11 // v6899
 // resource: R_Account
-load 31 // Admin/6913
+load 31 // Admin/6109
 callsub l11_LF_makeTxn_False_False_False_True
-load 21 // v6975
+load 21 // v6171
 int 1
 -
 dup
-store 11 // v7849
+store 11 // v6988
 int 0
 >=
 assert
@@ -106,107 +106,107 @@ assert
 // at ./src/contracts/coin_shop.rsh:176:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:176:27:function exp)
 int 1
 // resource: R_Asset
-load 34 // bronze/6889
+load 34 // bronze/6085
 // resource: R_Account
 txn Sender
 callsub l8_LF_makeTxn_False_False_True_True
 byte base64(YnJvbnpl)
-store 13 // v7855
+store 13 // v6994
 byte base64(w7qqiQ==)
-load 13 // v7855
+load 13 // v6994
 concat
 txn Sender
 concat
 log // up to 42 bytes
-// ^ log: "purchase" [v7855,user/7522] "purchase(byte[6],address)"
+// ^ log: "purchase" [v6994,user/6677] "purchase(byte[6],address)"
 int 1
-store 13 // v7856
-byte base64(AAAAAAAAHrA=)
-load 13 // v7856
+store 13 // v6995
+byte base64(AAAAAAAAG1M=)
+load 13 // v6995
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 13 // v7856
+load 13 // v6995
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 global Round
-load 26 // tokenInfos/6940
-load 22 // tokInfo/6974
-load 11 // v7849
+load 26 // tokenInfos/6136
+load 22 // tokInfo/6170
+load 11 // v6988
 itob
 replace2 0
 replace2 0
-load 12 // v7819
-store 25 // netBalance/6941
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
+load 12 // v6958
+store 25 // netBalance/6137
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
 _reachl_2:
-load 28 // isTerminated/6933
+load 28 // isTerminated/6129
 bz l23_ifF
-load 26 // tokenInfos/6940
+load 26 // tokenInfos/6136
 extract 0 17
 dup
-store 16 // tokInfo/12857
+store 16 // tokInfo/11724
 int 0
 extract_uint64
-store 15 // v12858
-load 26 // tokenInfos/6940
+store 15 // v11725
+load 26 // tokenInfos/6136
 extract 17 17
 int 0
 extract_uint64
-store 14 // v12860
-load 26 // tokenInfos/6940
+store 14 // v11727
+load 26 // tokenInfos/6136
 extract 34 17
 int 0
 extract_uint64
-store 13 // v12862
-load 15 // v12858
+store 13 // v11729
+load 15 // v11725
 itob
-load 14 // v12860
-itob
-concat
-load 13 // v12862
+load 14 // v11727
 itob
 concat
-store 12 // v12863
+load 13 // v11729
+itob
+concat
+store 12 // v11730
 l24_LF_svsDump_3:
-load 35 // Deployer/6888
-load 34 // bronze/6889
+load 35 // Deployer/6084
+load 34 // bronze/6085
 itob
 concat
-load 33 // silver/6890
+load 33 // silver/6086
 itob
 concat
-load 32 // gold/6891
+load 32 // gold/6087
 itob
 concat
-load 31 // Admin/6913
+load 31 // Admin/6109
 concat
-load 30 // coinPrices/6931
+load 30 // coinPrices/6127
 concat
-load 29 // isPaused/6932
+load 29 // isPaused/6128
 itob
 substring 7 8
 concat
-load 26 // tokenInfos/6940
+load 26 // tokenInfos/6136
 concat
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 itob
 concat
-load 16 // tokInfo/12857
+load 16 // tokInfo/11724
 concat
-load 15 // v12858
+load 15 // v11725
 itob
 concat
-load 14 // v12860
+load 14 // v11727
 itob
 concat
-load 13 // v12862
+load 13 // v11729
 itob
 concat
-load 12 // v12863
+load 12 // v11730
 concat
 int 61
 bzero
@@ -253,7 +253,7 @@ done:
 int 1
 return
 _api_buyer_api_purchase_gold4:
-load 23 // isAllowed/6973
+load 23 // isAllowed/6169
 assert
 // ^ Claim: contract is currently inactive
 // at reach standard library:57:5:application
@@ -262,7 +262,7 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:209:39:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 17 // v6979
+load 17 // v6175
 int 1
 >=
 assert
@@ -273,58 +273,58 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:209:39:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
-load 14 // v6984
+load 25 // netBalance/6137
+load 14 // v6180
 +
 dup
-store 11 // v8426
+store 11 // v7529
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 14 // v6984
+load 14 // v6180
 callsub l21_LF_checkTxn_False
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 11 // v8426
+load 11 // v7529
 dup
 -
 dup
-store 12 // v8561
+store 12 // v7664
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at ./src/contracts/coin_shop.rsh:218:64:application
 // at ./src/contracts/coin_shop.rsh:216:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:216:27:function exp)
-load 11 // v8426
+load 11 // v7529
 // resource: R_Account
-load 31 // Admin/6913
+load 31 // Admin/6109
 callsub l11_LF_makeTxn_False_False_False_True
-load 17 // v6979
+load 17 // v6175
 int 1
 -
 dup
-store 11 // v8591
+store 11 // v7694
 int 0
 >=
 assert
@@ -333,45 +333,45 @@ assert
 // at ./src/contracts/coin_shop.rsh:216:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:216:27:function exp)
 int 1
 // resource: R_Asset
-load 32 // gold/6891
+load 32 // gold/6087
 // resource: R_Account
 txn Sender
 callsub l8_LF_makeTxn_False_False_True_True
 byte base64(Z29sZAAA)
-store 13 // v8597
+store 13 // v7700
 byte base64(w7qqiQ==)
-load 13 // v8597
+load 13 // v7700
 concat
 txn Sender
 concat
 log // up to 42 bytes
-// ^ log: "purchase" [v8597,user/7522] "purchase(byte[6],address)"
+// ^ log: "purchase" [v7700,user/6677] "purchase(byte[6],address)"
 int 1
-store 13 // v8598
-byte base64(AAAAAAAAIZY=)
-load 13 // v8598
+store 13 // v7701
+byte base64(AAAAAAAAHhU=)
+load 13 // v7701
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 13 // v8598
+load 13 // v7701
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 global Round
-load 26 // tokenInfos/6940
-load 18 // tokInfo/6978
-load 11 // v8591
+load 26 // tokenInfos/6136
+load 18 // tokInfo/6174
+load 11 // v7694
 itob
 replace2 0
 replace2 34
-load 12 // v8561
-store 25 // netBalance/6941
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
+load 12 // v7664
+store 25 // netBalance/6137
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
 b _reachl_2
 _api_buyer_api_purchase_silver4:
-load 23 // isAllowed/6973
+load 23 // isAllowed/6169
 assert
 // ^ Claim: contract is currently inactive
 // at reach standard library:57:5:application
@@ -380,7 +380,7 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:41:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 19 // v6977
+load 19 // v6173
 int 1
 >=
 assert
@@ -391,58 +391,58 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:189:41:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
-load 15 // v6983
+load 25 // netBalance/6137
+load 15 // v6179
 +
 dup
-store 11 // v9092
+store 11 // v8159
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 15 // v6983
+load 15 // v6179
 callsub l21_LF_checkTxn_False
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 11 // v9092
+load 11 // v8159
 dup
 -
 dup
-store 12 // v9303
+store 12 // v8370
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at ./src/contracts/coin_shop.rsh:198:64:application
 // at ./src/contracts/coin_shop.rsh:196:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:196:27:function exp)
-load 11 // v9092
+load 11 // v8159
 // resource: R_Account
-load 31 // Admin/6913
+load 31 // Admin/6109
 callsub l11_LF_makeTxn_False_False_False_True
-load 19 // v6977
+load 19 // v6173
 int 1
 -
 dup
-store 11 // v9333
+store 11 // v8400
 int 0
 >=
 assert
@@ -451,49 +451,49 @@ assert
 // at ./src/contracts/coin_shop.rsh:196:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:196:27:function exp)
 int 1
 // resource: R_Asset
-load 33 // silver/6890
+load 33 // silver/6086
 // resource: R_Account
 txn Sender
 callsub l8_LF_makeTxn_False_False_True_True
 byte base64(c2lsdmVy)
-store 13 // v9339
+store 13 // v8406
 byte base64(w7qqiQ==)
-load 13 // v9339
+load 13 // v8406
 concat
 txn Sender
 concat
 log // up to 42 bytes
-// ^ log: "purchase" [v9339,user/7522] "purchase(byte[6],address)"
+// ^ log: "purchase" [v8406,user/6677] "purchase(byte[6],address)"
 int 1
-store 13 // v9340
-byte base64(AAAAAAAAJHw=)
-load 13 // v9340
+store 13 // v8407
+byte base64(AAAAAAAAINc=)
+load 13 // v8407
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 13 // v9340
+load 13 // v8407
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 global Round
-load 26 // tokenInfos/6940
-load 20 // tokInfo/6976
-load 11 // v9333
+load 26 // tokenInfos/6136
+load 20 // tokInfo/6172
+load 11 // v8400
 itob
 replace2 0
 replace2 17
-load 12 // v9303
-store 25 // netBalance/6941
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
+load 12 // v8370
+store 25 // netBalance/6137
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
 b _reachl_2
 _api_controller_api_restock4:
-load 13 // .fork179.msg/7523
+load 13 // .fork179.msg/6678
 extract 1 24
-store 11 // amts/9598
+store 11 // amts/8645
 txn Sender
-load 31 // Admin/6913
+load 31 // Admin/6109
 ==
 assert
 // ^ Claim: action not authorized
@@ -503,26 +503,26 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:232:42:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 11 // amts/9598
+load 11 // amts/8645
 int 0
 extract_uint64
-store 14 // v9601
-load 11 // amts/9598
+store 14 // v8648
+load 11 // amts/8645
 int 8
 extract_uint64
-store 13 // v9603
-load 11 // amts/9598
+store 13 // v8650
+load 11 // amts/8645
 int 16
 extract_uint64
-store 12 // v9606
-load 14 // v9601
+store 12 // v8653
+load 14 // v8648
 int 1200
 <=
-load 13 // v9603
+load 13 // v8650
 int 600
 <=
 &&
-load 12 // v9606
+load 12 // v8653
 int 200
 <=
 &&
@@ -534,135 +534,135 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:232:42:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
-load 14 // v9601
+load 21 // v6171
+load 14 // v8648
 +
 dup
-store 11 // v9763
+store 11 // v8794
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 26 // tokenInfos/6940
-load 22 // tokInfo/6974
-load 11 // v9763
+load 26 // tokenInfos/6136
+load 22 // tokInfo/6170
+load 11 // v8794
 itob
 replace2 0
 replace2 0
-store 15 // tokInfos'/9768
-load 14 // v9601
-load 34 // bronze/6889
+store 15 // tokInfos'/8799
+load 14 // v8648
+load 34 // bronze/6085
 callsub l22_LF_checkTxn_True
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 15 // tokInfos'/9768
+load 15 // tokInfos'/8799
 extract 17 17
 dup
-store 16 // tokInfo/9769
+store 16 // tokInfo/8800
 int 0
 extract_uint64
-load 13 // v9603
+load 13 // v8650
 +
 dup
-store 14 // v9771
+store 14 // v8802
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 15 // tokInfos'/9768
-load 16 // tokInfo/9769
-load 14 // v9771
+load 15 // tokInfos'/8799
+load 16 // tokInfo/8800
+load 14 // v8802
 itob
 replace2 0
 replace2 17
-store 11 // tokInfos'/9776
-load 13 // v9603
-load 33 // silver/6890
+store 11 // tokInfos'/8807
+load 13 // v8650
+load 33 // silver/6086
 callsub l22_LF_checkTxn_True
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 11 // tokInfos'/9776
+load 11 // tokInfos'/8807
 extract 34 17
 dup
-store 15 // tokInfo/9777
+store 15 // tokInfo/8808
 int 0
 extract_uint64
-load 12 // v9606
+load 12 // v8653
 +
 dup
-store 14 // v9779
+store 14 // v8810
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 11 // tokInfos'/9776
-load 15 // tokInfo/9777
-load 14 // v9779
+load 11 // tokInfos'/8807
+load 15 // tokInfo/8808
+load 14 // v8810
 itob
 replace2 0
 replace2 34
-store 13 // tokInfos'/9784
-load 12 // v9606
-load 32 // gold/6891
+store 13 // tokInfos'/8815
+load 12 // v8653
+load 32 // gold/6087
 callsub l22_LF_checkTxn_True
 // ^ CheckPay
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 13 // tokInfos'/9784
+load 13 // tokInfos'/8815
 extract 0 17
 int 0
 extract_uint64
-store 14 // v10028
-load 13 // tokInfos'/9784
+store 14 // v9059
+load 13 // tokInfos'/8815
 extract 17 17
 int 0
 extract_uint64
-store 12 // v10030
-load 13 // tokInfos'/9784
+store 12 // v9061
+load 13 // tokInfos'/8815
 extract 34 17
 int 0
 extract_uint64
-store 11 // v10032
+store 11 // v9063
 byte base64(B/YAYQ==)
-load 14 // v10028
+load 14 // v9059
 itob
 concat
-load 12 // v10030
+load 12 // v9061
 itob
 concat
-load 11 // v10032
+load 11 // v9063
 itob
 concat
 log // up to 28 bytes
-// ^ log: "restock" [v10028,v10030,v10032] "restock(uint64,uint64,uint64)"
+// ^ log: "restock" [v9059,v9061,v9063] "restock(uint64,uint64,uint64)"
 int 1
-store 11 // v10036
-byte base64(AAAAAAAAJzQ=)
-load 11 // v10036
+store 11 // v9067
+byte base64(AAAAAAAAI2s=)
+load 11 // v9067
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 11 // v10036
+load 11 // v9067
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 global Round
-load 13 // tokInfos'/9784
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
+load 13 // tokInfos'/8815
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
 b _reachl_2
 _api_controller_api_set_prices4:
 txn Sender
-load 31 // Admin/6913
+load 31 // Admin/6109
 ==
 assert
 // ^ Claim: action not authorized
@@ -672,139 +672,139 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:250:50:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 13 // .fork179.msg/7523
+load 13 // .fork179.msg/6678
 extract 1 24
 dup
-store 12 // coinPrices/10714
+store 12 // coinPrices/9709
 int 0
 extract_uint64
-store 14 // v10718
-load 12 // coinPrices/10714
+store 14 // v9713
+load 12 // coinPrices/9709
 int 8
 extract_uint64
-store 13 // v10719
-load 12 // coinPrices/10714
+store 13 // v9714
+load 12 // coinPrices/9709
 int 16
 extract_uint64
-store 11 // v10720
+store 11 // v9715
 byte base64(3yi0DA==)
-load 14 // v10718
+load 14 // v9713
 itob
 concat
-load 13 // v10719
+load 13 // v9714
 itob
 concat
-load 11 // v10720
+load 11 // v9715
 itob
 concat
 log // up to 28 bytes
-// ^ log: "price_change" [v10718,v10719,v10720] "price_change(uint64,uint64,uint64)"
+// ^ log: "price_change" [v9713,v9714,v9715] "price_change(uint64,uint64,uint64)"
 int 1
-store 11 // v10723
-byte base64(AAAAAAAAKeM=)
-load 11 // v10723
+store 11 // v9718
+byte base64(AAAAAAAAJfY=)
+load 11 // v9718
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 11 // v10723
+load 11 // v9718
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
-load 12 // coinPrices/10714
+load 12 // coinPrices/9709
 global Round
-store 27 // thisConsensusTime/6934
-store 30 // coinPrices/6931
+store 27 // thisConsensusTime/6130
+store 30 // coinPrices/6127
 b _reachl_2
 _api_controller_api_terminate4:
 txn Sender
-load 31 // Admin/6913
+load 31 // Admin/6109
 ==
 assert
 // ^ Claim: action not authorized
 // at reach standard library:57:5:application
-// at ./src/contracts/coin_shop.rsh:310:18:application call to "check" (defined at: reach standard library:49:32:function exp)
-// at ./src/contracts/coin_shop.rsh:309:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:309:40:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:309:40:function exp)
+// at ./src/contracts/coin_shop.rsh:308:18:application call to "check" (defined at: reach standard library:49:32:function exp)
+// at ./src/contracts/coin_shop.rsh:307:40:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:307:40:function exp)
+// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:307:40:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
 int 1
-store 11 // v11405
+store 11 // v10364
 byte base64(LhE9bw==)
-load 11 // v11405
+load 11 // v10364
 itob
 substring 7 8
 concat
 log // up to 5 bytes
-// ^ log: "terminate" [v11405] "terminate(byte)"
+// ^ log: "terminate" [v10364] "terminate(byte)"
 int 1
-store 11 // v11406
-byte base64(AAAAAAAALI4=)
-load 11 // v11406
+store 11 // v10365
+byte base64(AAAAAAAAKH0=)
+load 11 // v10365
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 11 // v11406
+load 11 // v10365
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 int 1
 global Round
-store 27 // thisConsensusTime/6934
-store 28 // isTerminated/6933
+store 27 // thisConsensusTime/6130
+store 28 // isTerminated/6129
 b _reachl_2
 _api_controller_api_toggle_pause4:
 txn Sender
-load 31 // Admin/6913
+load 31 // Admin/6109
 ==
 assert
 // ^ Claim: action not authorized
@@ -814,275 +814,227 @@ assert
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:267:43:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-byte base64(AAAAAAAAGzs=)
-load 24 // v6971
+byte base64(AAAAAAAAGBc=)
+load 24 // v6167
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 24 // v6971
+load 24 // v6167
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
-load 24 // v6971
+load 24 // v6167
 global Round
-store 27 // thisConsensusTime/6934
-store 29 // isPaused/6932
+store 27 // thisConsensusTime/6130
+store 29 // isPaused/6128
 b _reachl_2
 _api_controller_api_withdraw4:
-load 13 // .fork179.msg/7523
-extract 1 24
-store 14 // amts/12352
 txn Sender
-load 31 // Admin/6913
+load 31 // Admin/6109
 ==
 assert
 // ^ Claim: action not authorized
 // at reach standard library:57:5:application
 // at ./src/contracts/coin_shop.rsh:288:18:application call to "check" (defined at: reach standard library:49:32:function exp)
-// at ./src/contracts/coin_shop.rsh:287:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
+// at ./src/contracts/coin_shop.rsh:287:39:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:39:function exp)
+// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:39:function exp)
 // at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
 // at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 14 // amts/12352
-int 0
-extract_uint64
-store 13 // amt/12355
-load 21 // v6975
-load 13 // amt/12355
->=
-assert
-// ^ Claim: balance insufficient for transaction
-// at reach standard library:57:5:application
-// at ./src/contracts/coin_shop.rsh:290:18:application call to "check" (defined at: reach standard library:49:32:function exp)
-// at ./src/contracts/coin_shop.rsh:287:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
-// at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 14 // amts/12352
-int 8
-extract_uint64
-store 12 // amt/12360
-load 19 // v6977
-load 12 // amt/12360
->=
-assert
-// ^ Claim: balance insufficient for transaction
-// at reach standard library:57:5:application
-// at ./src/contracts/coin_shop.rsh:291:18:application call to "check" (defined at: reach standard library:49:32:function exp)
-// at ./src/contracts/coin_shop.rsh:287:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
-// at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 14 // amts/12352
-int 16
-extract_uint64
-store 11 // amt/12365
-load 17 // v6979
-load 11 // amt/12365
->=
-assert
-// ^ Claim: balance insufficient for transaction
-// at reach standard library:57:5:application
-// at ./src/contracts/coin_shop.rsh:292:18:application call to "check" (defined at: reach standard library:49:32:function exp)
-// at ./src/contracts/coin_shop.rsh:287:43:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:287:43:function exp)
-// at ./src/contracts/coin_shop.rsh:131:64:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:131:64:function exp)
-// at ./src/contracts/coin_shop.rsh:143:18:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:143:18:function exp)
-load 25 // netBalance/6941
+load 25 // netBalance/6137
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
+load 21 // v6171
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 19 // v6977
+load 19 // v6173
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 17 // v6979
+load 17 // v6175
 int 18446744073709551615
 <=
 assert
 // ^ Claim: assume <= UInt.max
 // at ./src/contracts/coin_shop.rsh:131:64:dot
-load 21 // v6975
-load 13 // amt/12355
+load 21 // v6171
+dup
 -
 dup
-store 14 // v12812
+store 12 // v11686
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
-// at ./src/contracts/coin_shop.rsh:299:56:application
-// at ./src/contracts/coin_shop.rsh:296:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:296:27:function exp)
-load 26 // tokenInfos/6940
-load 22 // tokInfo/6974
-load 14 // v12812
+// at ./src/contracts/coin_shop.rsh:297:56:application
+// at ./src/contracts/coin_shop.rsh:292:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:292:27:function exp)
+load 26 // tokenInfos/6136
+load 22 // tokInfo/6170
+load 12 // v11686
 itob
 replace2 0
 replace2 0
-store 15 // tokInfos'/12817
-load 13 // amt/12355
+store 11 // tokInfos'/11691
+load 21 // v6171
 // resource: R_Asset
-load 34 // bronze/6889
+load 34 // bronze/6085
 // resource: R_Account
-load 31 // Admin/6913
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
-load 15 // tokInfos'/12817
+load 11 // tokInfos'/11691
 extract 17 17
 dup
-store 17 // tokInfo/12818
+store 14 // tokInfo/11692
 int 0
 extract_uint64
-load 12 // amt/12360
+load 19 // v6173
 -
 dup
-store 16 // v12823
+store 13 // v11697
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
-// at ./src/contracts/coin_shop.rsh:299:56:application
-// at ./src/contracts/coin_shop.rsh:296:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:296:27:function exp)
-load 15 // tokInfos'/12817
-load 17 // tokInfo/12818
-load 16 // v12823
+// at ./src/contracts/coin_shop.rsh:297:56:application
+// at ./src/contracts/coin_shop.rsh:292:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:292:27:function exp)
+load 11 // tokInfos'/11691
+load 14 // tokInfo/11692
+load 13 // v11697
 itob
 replace2 0
 replace2 17
-store 14 // tokInfos'/12828
-load 12 // amt/12360
+store 12 // tokInfos'/11702
+load 19 // v6173
 // resource: R_Asset
-load 33 // silver/6890
-load 31 // Admin/6913
+load 33 // silver/6086
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
-load 14 // tokInfos'/12828
+load 12 // tokInfos'/11702
 extract 34 17
 dup
-store 16 // tokInfo/12829
+store 13 // tokInfo/11703
 int 0
 extract_uint64
-load 11 // amt/12365
+load 17 // v6175
 -
 dup
-store 15 // v12834
+store 11 // v11708
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
-// at ./src/contracts/coin_shop.rsh:299:56:application
-// at ./src/contracts/coin_shop.rsh:296:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:296:27:function exp)
-load 11 // amt/12365
+// at ./src/contracts/coin_shop.rsh:297:56:application
+// at ./src/contracts/coin_shop.rsh:292:27:application call to [unknown function] (defined at: ./src/contracts/coin_shop.rsh:292:27:function exp)
+load 17 // v6175
 // resource: R_Asset
-load 32 // gold/6891
-load 31 // Admin/6913
+load 32 // gold/6087
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
 byte base64(+Q10wA==)
-load 13 // amt/12355
+load 21 // v6171
 itob
 concat
-load 12 // amt/12360
+load 19 // v6173
 itob
 concat
-load 11 // amt/12365
+load 17 // v6175
 itob
 concat
 log // up to 28 bytes
-// ^ log: "withdraw" [amt/12355,amt/12360,amt/12365] "withdraw(uint64,uint64,uint64)"
+// ^ log: "withdraw" [v6171,v6173,v6175] "withdraw(uint64,uint64,uint64)"
 int 1
-store 11 // v12843
-byte base64(AAAAAAAAMis=)
-load 11 // v12843
+store 14 // v11714
+byte base64(AAAAAAAALcI=)
+load 14 // v11714
 itob
 substring 7 8
 concat
 log // up to 9 bytes
-load 11 // v12843
+load 14 // v11714
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 global Round
-load 14 // tokInfos'/12828
-load 16 // tokInfo/12829
-load 15 // v12834
+load 12 // tokInfos'/11702
+load 13 // tokInfo/11703
+load 11 // v11708
 itob
 replace2 0
 replace2 34
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
 b _reachl_2
 _reacha_buyer_api_purchase_bronze:
 int 33
 bzero
-store 11 // v18656
+store 11 // v17521
 _reachi_4:
 int 5
 load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l4_LF_svsLoad_5
-load 11 // v18656
+load 11 // v17521
 int 0
 extract_uint64
-store 12 // v18655
-load 11 // v18656
+store 12 // v17520
+load 11 // v17521
 extract 8 25
-store 13 // .fork179.msg/7523
+store 13 // .fork179.msg/6678
 byte base64(Km21Wg==)
-load 12 // v18655
+load 12 // v17520
 itob
 concat
-load 13 // .fork179.msg/7523
+load 13 // .fork179.msg/6678
 concat
 log // up to 37 bytes
-// ^ log: "_reach_e4" [v18655,.fork179.msg/7523] "_reach_e4(uint64,(byte,byte[24]))"
-load 12 // v18655
+// ^ log: "_reach_e4" [v17520,.fork179.msg/6678] "_reach_e4(uint64,(byte,byte[24]))"
+load 12 // v17520
 callsub l7_LF_timeCheck
-load 13 // .fork179.msg/7523
+load 13 // .fork179.msg/6678
 int 0
 getbyte
 switch l13_buyer_api_purchase_bronze0_179 l14_buyer_api_purchase_gold0_179 l15_buyer_api_purchase_silver0_179 l16_controller_api_restock0_179 l17_controller_api_set_prices0_179 l18_controller_api_terminate0_179 l19_controller_api_toggle_pause0_179 l20_controller_api_withdraw0_179
 b errl
 _reacha_buyer_api_purchase_gold:
 byte base64(AAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_buyer_api_purchase_silver:
 byte base64(AAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_coin_prices:
 load 1 // GV_currentStep :: UInt
@@ -1096,7 +1048,7 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:88:20:property binding
 callsub l3_LF_svsLoad_3
-load 30 // coinPrices/6931
+load 30 // coinPrices/6127
 store 4 // GV_apiRet :: Null
 apiReturn_check:
 txn OnCompletion
@@ -1117,43 +1069,38 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:87:20:property binding
 callsub l3_LF_svsLoad_3
-load 12 // v12863
+load 12 // v11730
 store 4 // GV_apiRet :: Null
 b apiReturn_check
 _reacha_controller_api_restock:
 int 8
 bzero
 byte base64(Aw==)
-load 11 // v18620
+load 11 // v17487
 concat
 concat
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_controller_api_set_prices:
 int 8
 bzero
 byte base64(BA==)
-load 11 // v18626
+load 11 // v17493
 concat
 concat
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_controller_api_terminate:
 byte base64(AAAAAAAAAAAFAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_controller_api_toggle_pause:
 byte base64(AAAAAAAAAAAGAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 _reacha_controller_api_withdraw:
-int 8
-bzero
-byte base64(Bw==)
-load 11 // v18640
-concat
-concat
-store 11 // v18656
+byte base64(AAAAAAAAAAAHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA)
+store 11 // v17521
 b _reachi_4
 _reacha_is_paused:
 load 1 // GV_currentStep :: UInt
@@ -1167,57 +1114,57 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:89:18:property binding
 callsub l3_LF_svsLoad_3
-load 29 // isPaused/6932
+load 29 // isPaused/6128
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
 b apiReturn_check
 _reachi_0:
 txn Sender
-store 35 // Deployer/6888
-load 11 // v18647
+store 35 // Deployer/6084
+load 11 // v17512
 int 0
 extract_uint64
-store 12 // v18646
-load 11 // v18647
+store 12 // v17511
+load 11 // v17512
 int 8
 extract_uint64
-store 34 // bronze/6889
-load 11 // v18647
+store 34 // bronze/6085
+load 11 // v17512
 int 16
 extract_uint64
-store 33 // silver/6890
-load 11 // v18647
+store 33 // silver/6086
+load 11 // v17512
 int 24
 extract_uint64
-store 32 // gold/6891
+store 32 // gold/6087
 byte base64(9u2r0g==)
-load 12 // v18646
+load 12 // v17511
 itob
 concat
-load 34 // bronze/6889
+load 34 // bronze/6085
 itob
 concat
-load 33 // silver/6890
+load 33 // silver/6086
 itob
 concat
-load 32 // gold/6891
+load 32 // gold/6087
 itob
 concat
 log // up to 36 bytes
-// ^ log: "_reach_e0" [v18646,bronze/6889,silver/6890,gold/6891] "_reach_e0(uint64,uint64,uint64,uint64)"
-load 12 // v18646
+// ^ log: "_reach_e0" [v17511,bronze/6085,silver/6086,gold/6087] "_reach_e0(uint64,uint64,uint64,uint64)"
+load 12 // v17511
 callsub l7_LF_timeCheck
 int 17
 bzero
 dup
-store 12 // initialInfo/6865
+store 12 // initialInfo/6061
 dup
 concat
-load 12 // initialInfo/6865
+load 12 // initialInfo/6061
 concat
 dup
-store 11 // tokInfos/6866
+store 11 // tokInfos/6062
 dup
 extract 0 17
 int 8
@@ -1225,33 +1172,33 @@ bzero
 replace2 0
 replace2 0
 dup
-store 12 // tokInfos'/6896
+store 12 // tokInfos'/6092
 dup
 extract 17 17
 int 8
 bzero
 replace2 0
 replace2 17
-store 11 // tokInfos'/6900
-load 33 // silver/6890
-load 34 // bronze/6889
+store 11 // tokInfos'/6096
+load 33 // silver/6086
+load 34 // bronze/6085
 !=
 assert
 // ^ Claim: non-network tokens distinct
 // at ./src/contracts/coin_shop.rsh:116:14:dot
-load 11 // tokInfos'/6900
+load 11 // tokInfos'/6096
 dup
 extract 34 17
 int 8
 bzero
 replace2 0
 replace2 34
-store 13 // tokInfos'/6906
-load 32 // gold/6891
-load 34 // bronze/6889
+store 13 // tokInfos'/6102
+load 32 // gold/6087
+load 34 // bronze/6085
 !=
-load 32 // gold/6891
-load 33 // silver/6890
+load 32 // gold/6087
+load 33 // silver/6086
 !=
 &&
 assert
@@ -1261,34 +1208,34 @@ int 100000
 callsub l1_LF_mbrAdd
 int 0
 // resource: R_Asset
-load 34 // bronze/6889
+load 34 // bronze/6085
 global CurrentApplicationAddress
 callsub l8_LF_makeTxn_False_False_True_True
 int 100000
 callsub l1_LF_mbrAdd
 int 0
 // resource: R_Asset
-load 33 // silver/6890
+load 33 // silver/6086
 global CurrentApplicationAddress
 callsub l8_LF_makeTxn_False_False_True_True
 int 100000
 callsub l1_LF_mbrAdd
 int 0
 // resource: R_Asset
-load 32 // gold/6891
+load 32 // gold/6087
 global CurrentApplicationAddress
 callsub l8_LF_makeTxn_False_False_True_True
-load 35 // Deployer/6888
-store 31 // Admin/6913
-load 34 // bronze/6889
-load 33 // silver/6890
+load 35 // Deployer/6084
+store 31 // Admin/6109
+load 34 // bronze/6085
+load 33 // silver/6086
 !=
-load 34 // bronze/6889
-load 32 // gold/6891
+load 34 // bronze/6085
+load 32 // gold/6087
 !=
 &&
-load 33 // silver/6890
-load 32 // gold/6891
+load 33 // silver/6086
+load 32 // gold/6087
 !=
 &&
 assert
@@ -1296,19 +1243,19 @@ assert
 // at reach standard library:57:5:application
 // at ./src/contracts/coin_shop.rsh:122:10:application call to "check" (defined at: reach standard library:49:32:function exp)
 l9_LF_svsDump_1:
-load 35 // Deployer/6888
-load 34 // bronze/6889
+load 35 // Deployer/6084
+load 34 // bronze/6085
 itob
 concat
-load 33 // silver/6890
+load 33 // silver/6086
 itob
 concat
-load 32 // gold/6891
+load 32 // gold/6087
 itob
 concat
-load 13 // tokInfos'/6906
+load 13 // tokInfos'/6102
 concat
-load 31 // Admin/6913
+load 31 // Admin/6109
 concat
 int 159
 bzero
@@ -1324,36 +1271,36 @@ assert
 l10_LF_svsLoad_1:
 dup
 extract 0 32
-store 35 // Deployer/6888
+store 35 // Deployer/6084
 dup
 int 32
 extract_uint64
-store 34 // bronze/6889
+store 34 // bronze/6085
 dup
 int 40
 extract_uint64
-store 33 // silver/6890
+store 33 // silver/6086
 dup
 int 48
 extract_uint64
-store 32 // gold/6891
+store 32 // gold/6087
 dup
 extract 56 51
-store 13 // tokInfos'/6906
+store 13 // tokInfos'/6102
 extract 107 32
-store 31 // Admin/6913
-load 11 // v18650
+store 31 // Admin/6109
+load 11 // v17515
 btoi
-store 12 // v18649
+store 12 // v17514
 byte base64(1RUZFA==)
-load 12 // v18649
+load 12 // v17514
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e1" [v18649] "_reach_e1(uint64)"
-load 12 // v18649
+// ^ log: "_reach_e1" [v17514] "_reach_e1(uint64)"
+load 12 // v17514
 callsub l7_LF_timeCheck
-load 35 // Deployer/6888
+load 35 // Deployer/6084
 txn Sender
 ==
 assert
@@ -1363,14 +1310,14 @@ byte base64(AAAAAACYloAAAAAAATEtAAAAAAABycOA)
 int 0
 int 0
 global Round
-load 13 // tokInfos'/6906
+load 13 // tokInfos'/6102
 int 0
-store 25 // netBalance/6941
-store 26 // tokenInfos/6940
-store 27 // thisConsensusTime/6934
-store 28 // isTerminated/6933
-store 29 // isPaused/6932
-store 30 // coinPrices/6931
+store 25 // netBalance/6137
+store 26 // tokenInfos/6136
+store 27 // thisConsensusTime/6130
+store 28 // isTerminated/6129
+store 29 // isPaused/6128
+store 30 // coinPrices/6127
 b _reachl_2
 _reachi_3:
 int 3
@@ -1378,29 +1325,29 @@ load 1 // GV_currentStep :: UInt
 ==
 assert
 callsub l3_LF_svsLoad_3
-load 11 // v18653
+load 11 // v17518
 btoi
-store 12 // v18652
+store 12 // v17517
 byte base64(1Axs1g==)
-load 12 // v18652
+load 12 // v17517
 itob
 concat
 log // up to 12 bytes
-// ^ log: "_reach_e3" [v18652] "_reach_e3(uint64)"
-load 12 // v18652
+// ^ log: "_reach_e3" [v17517] "_reach_e3(uint64)"
+load 12 // v17517
 callsub l7_LF_timeCheck
-load 31 // Admin/6913
+load 31 // Admin/6109
 txn Sender
 ==
-load 35 // Deployer/6888
+load 35 // Deployer/6084
 txn Sender
 ==
 ||
 assert
 // ^ Claim: sender correct
 // at reach standard library:197:11:dot
-// at ./src/contracts/coin_shop.rsh:327:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 25 // netBalance/6941
+// at ./src/contracts/coin_shop.rsh:325:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 25 // netBalance/6137
 dup
 -
 int 0
@@ -1408,90 +1355,90 @@ int 0
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/coin_shop.rsh:327:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 25 // netBalance/6941
+// at ./src/contracts/coin_shop.rsh:325:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 25 // netBalance/6137
 // resource: R_Account
-load 31 // Admin/6913
+load 31 // Admin/6109
 callsub l11_LF_makeTxn_False_False_False_True
-load 15 // v12858
+load 15 // v11725
 dup
 -
 dup
-store 12 // v12910
+store 12 // v11777
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/coin_shop.rsh:327:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 26 // tokenInfos/6940
-load 16 // tokInfo/12857
-load 12 // v12910
+// at ./src/contracts/coin_shop.rsh:325:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 26 // tokenInfos/6136
+load 16 // tokInfo/11724
+load 12 // v11777
 itob
 replace2 0
 replace2 0
-store 11 // tokInfos'/12915
-load 15 // v12858
+store 11 // tokInfos'/11782
+load 15 // v11725
 // resource: R_Asset
-load 34 // bronze/6889
-load 31 // Admin/6913
+load 34 // bronze/6085
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
-load 11 // tokInfos'/12915
+load 11 // tokInfos'/11782
 extract 17 17
 dup
-store 15 // tokInfo/12916
+store 15 // tokInfo/11783
 int 0
 extract_uint64
-load 14 // v12860
+load 14 // v11727
 -
 dup
-store 12 // v12921
+store 12 // v11788
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/coin_shop.rsh:327:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 14 // v12860
+// at ./src/contracts/coin_shop.rsh:325:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 14 // v11727
 // resource: R_Asset
-load 33 // silver/6890
-load 31 // Admin/6913
+load 33 // silver/6086
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
-load 11 // tokInfos'/12915
-load 15 // tokInfo/12916
-load 12 // v12921
+load 11 // tokInfos'/11782
+load 15 // tokInfo/11783
+load 12 // v11788
 itob
 replace2 0
 replace2 17
 extract 34 17
 int 0
 extract_uint64
-load 13 // v12862
+load 13 // v11729
 -
 int 0
 >=
 assert
 // ^ Claim: assume >= 0
 // at reach standard library:198:46:application
-// at ./src/contracts/coin_shop.rsh:327:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
-load 13 // v12862
+// at ./src/contracts/coin_shop.rsh:325:12:application call to "closeTo" (defined at: reach standard library:195:8:function exp)
+load 13 // v11729
 // resource: R_Asset
-load 32 // gold/6891
-load 31 // Admin/6913
+load 32 // gold/6087
+load 31 // Admin/6109
 callsub l8_LF_makeTxn_False_False_True_True
 // resource: R_Account
 int 0
-load 32 // gold/6891
+load 32 // gold/6087
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l12_LF_makeTxn_False_True_True_True
 int 0
-load 33 // silver/6890
+load 33 // silver/6086
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l12_LF_makeTxn_False_True_True_True
 int 0
-load 34 // bronze/6889
+load 34 // bronze/6085
 global CurrentApplicationAddress
 global CreatorAddress
 callsub l12_LF_makeTxn_False_True_True_True
@@ -1513,22 +1460,22 @@ callsub l0_LF_wasntMeth
 int 100000
 callsub l1_LF_mbrAdd
 txna ApplicationArgs 1
-store 11 // v18647
+store 11 // v17512
 b _reachi_0
 _reachp_1:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v18650
+store 11 // v17515
 b _reachi_1
 _reachp_3:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v18653
+store 11 // v17518
 b _reachi_3
 _reachp_4:
 callsub l0_LF_wasntMeth
 txna ApplicationArgs 1
-store 11 // v18656
+store 11 // v17521
 b _reachi_4
 alloc:
 int 0
@@ -1565,19 +1512,17 @@ coin_supply___uik9ePTbV5CYgVkzPOb0zHYXJs93ICx7RXAE0xk_i_mgM_:
 b _reacha_coin_supply
 controller_api_rcBtj2YWUMmz7g7mT6a6_1abRutK3PdoPfZapxsrYu2o_:
 txna ApplicationArgs 1
-store 11 // v18620
+store 11 // v17487
 b _reacha_controller_api_restock
 controller_api_sZGOkjDEzF6vXjr7iatB98S1R8Lgi0gUSY6NWz2LUrds_:
 txna ApplicationArgs 1
-store 11 // v18626
+store 11 // v17493
 b _reacha_controller_api_set_prices
 controller_api_t_Z9wmzV5mC_Pvgg5lhnigQhAb9ZgRS0Ss0IHbNXkGp8_:
 b _reacha_controller_api_terminate
 controller_api_toPganL3IMIy1g1yc_dZQAN1KBzPJVXUPycTxarKJoDQ_:
 b _reacha_controller_api_toggle_pause
-controller_api_whzGSsJRwUP5uZQEA_uSLMRKzj7lHESauLWqhr5vTSKE_:
-txna ApplicationArgs 1
-store 11 // v18640
+controller_api_wb0XtdEKqi8WNStHAlw2K4jvyjsherZmQDbr9M81m3CY_:
 b _reacha_controller_api_withdraw
 is_paused__byte61XYhmPXYss6LXZIGcOmPGCNFlmHlLGfWrm7xFsGEBc_:
 b _reacha_is_paused
@@ -1598,116 +1543,116 @@ b _api_controller_api_toggle_pause4
 l20_controller_api_withdraw0_179:
 b _api_controller_api_withdraw4
 l23_ifF:
-load 29 // isPaused/6932
+load 29 // isPaused/6128
 !
-store 24 // v6971
-load 29 // isPaused/6932
+store 24 // v6167
+load 29 // isPaused/6128
 !
-store 23 // isAllowed/6973
-load 26 // tokenInfos/6940
+store 23 // isAllowed/6169
+load 26 // tokenInfos/6136
 extract 0 17
 dup
-store 22 // tokInfo/6974
+store 22 // tokInfo/6170
 int 0
 extract_uint64
-store 21 // v6975
-load 26 // tokenInfos/6940
+store 21 // v6171
+load 26 // tokenInfos/6136
 extract 17 17
 dup
-store 20 // tokInfo/6976
+store 20 // tokInfo/6172
 int 0
 extract_uint64
-store 19 // v6977
-load 26 // tokenInfos/6940
+store 19 // v6173
+load 26 // tokenInfos/6136
 extract 34 17
 dup
-store 18 // tokInfo/6978
+store 18 // tokInfo/6174
 int 0
 extract_uint64
-store 17 // v6979
-load 21 // v6975
+store 17 // v6175
+load 21 // v6171
 itob
-load 19 // v6977
-itob
-concat
-load 17 // v6979
+load 19 // v6173
 itob
 concat
-store 12 // v6980
-load 30 // coinPrices/6931
+load 17 // v6175
+itob
+concat
+store 12 // v6176
+load 30 // coinPrices/6127
 int 0
 extract_uint64
-store 16 // v6982
-load 30 // coinPrices/6931
+store 16 // v6178
+load 30 // coinPrices/6127
 int 8
 extract_uint64
-store 15 // v6983
-load 30 // coinPrices/6931
+store 15 // v6179
+load 30 // coinPrices/6127
 int 16
 extract_uint64
-store 14 // v6984
+store 14 // v6180
 int 0
-store 28 // isTerminated/6933
+store 28 // isTerminated/6129
 l25_LF_svsDump_5:
-load 35 // Deployer/6888
-load 34 // bronze/6889
+load 35 // Deployer/6084
+load 34 // bronze/6085
 itob
 concat
-load 33 // silver/6890
+load 33 // silver/6086
 itob
 concat
-load 32 // gold/6891
+load 32 // gold/6087
 itob
 concat
-load 31 // Admin/6913
+load 31 // Admin/6109
 concat
-load 30 // coinPrices/6931
+load 30 // coinPrices/6127
 concat
-load 29 // isPaused/6932
-itob
-substring 7 8
-concat
-load 28 // isTerminated/6933
+load 29 // isPaused/6128
 itob
 substring 7 8
 concat
-load 26 // tokenInfos/6940
-concat
-load 25 // netBalance/6941
-itob
-concat
-load 24 // v6971
+load 28 // isTerminated/6129
 itob
 substring 7 8
 concat
-load 23 // isAllowed/6973
+load 26 // tokenInfos/6136
+concat
+load 25 // netBalance/6137
+itob
+concat
+load 24 // v6167
 itob
 substring 7 8
 concat
-load 22 // tokInfo/6974
+load 23 // isAllowed/6169
+itob
+substring 7 8
 concat
-load 21 // v6975
+load 22 // tokInfo/6170
+concat
+load 21 // v6171
 itob
 concat
-load 20 // tokInfo/6976
+load 20 // tokInfo/6172
 concat
-load 19 // v6977
+load 19 // v6173
 itob
 concat
-load 18 // tokInfo/6978
+load 18 // tokInfo/6174
 concat
-load 17 // v6979
+load 17 // v6175
 itob
 concat
-load 12 // v6980
+load 12 // v6176
 concat
-load 16 // v6982
+load 16 // v6178
 itob
 concat
-load 15 // v6983
+load 15 // v6179
 itob
 concat
-load 14 // v6984
+load 14 // v6180
 itob
 concat
 int 5
@@ -1740,7 +1685,7 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:88:20:property binding
 callsub l4_LF_svsLoad_5
-load 30 // coinPrices/6931
+load 30 // coinPrices/6127
 store 4 // GV_apiRet :: Null
 b apiReturn_check
 l5_ifF:
@@ -1751,7 +1696,7 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:87:20:property binding
 callsub l4_LF_svsLoad_5
-load 12 // v6980
+load 12 // v6176
 store 4 // GV_apiRet :: Null
 b apiReturn_check
 l6_ifF:
@@ -1762,7 +1707,7 @@ assert
 // ^ Claim: Incorrect state: not leaf
 // at ./src/contracts/coin_shop.rsh:89:18:property binding
 callsub l4_LF_svsLoad_5
-load 29 // isPaused/6932
+load 29 // isPaused/6128
 itob
 substring 7 8
 store 4 // GV_apiRet :: Null
@@ -1809,134 +1754,134 @@ retsub
 l4_LF_svsLoad_5:
 dup
 extract 0 32
-store 35 // Deployer/6888
+store 35 // Deployer/6084
 dup
 int 32
 extract_uint64
-store 34 // bronze/6889
+store 34 // bronze/6085
 dup
 int 40
 extract_uint64
-store 33 // silver/6890
+store 33 // silver/6086
 dup
 int 48
 extract_uint64
-store 32 // gold/6891
+store 32 // gold/6087
 dup
 extract 56 32
-store 31 // Admin/6913
+store 31 // Admin/6109
 dup
 extract 88 24
-store 30 // coinPrices/6931
+store 30 // coinPrices/6127
 dup
 extract 112 1
 btoi
-store 29 // isPaused/6932
+store 29 // isPaused/6128
 dup
 extract 113 1
 btoi
-store 28 // isTerminated/6933
+store 28 // isTerminated/6129
 dup
 extract 114 51
-store 26 // tokenInfos/6940
+store 26 // tokenInfos/6136
 dup
 int 165
 extract_uint64
-store 25 // netBalance/6941
+store 25 // netBalance/6137
 dup
 extract 173 1
 btoi
-store 24 // v6971
+store 24 // v6167
 dup
 extract 174 1
 btoi
-store 23 // isAllowed/6973
+store 23 // isAllowed/6169
 dup
 extract 175 17
-store 22 // tokInfo/6974
+store 22 // tokInfo/6170
 dup
 int 192
 extract_uint64
-store 21 // v6975
+store 21 // v6171
 dup
 extract 200 17
-store 20 // tokInfo/6976
+store 20 // tokInfo/6172
 dup
 int 217
 extract_uint64
-store 19 // v6977
+store 19 // v6173
 dup
 extract 225 17
-store 18 // tokInfo/6978
+store 18 // tokInfo/6174
 dup
 int 242
 extract_uint64
-store 17 // v6979
+store 17 // v6175
 dup
 extract 250 24
-store 12 // v6980
+store 12 // v6176
 dup
 int 274
 extract_uint64
-store 16 // v6982
+store 16 // v6178
 dup
 int 282
 extract_uint64
-store 15 // v6983
+store 15 // v6179
 int 290
 extract_uint64
-store 14 // v6984
+store 14 // v6180
 retsub
 l3_LF_svsLoad_3:
 dup
 extract 0 32
-store 35 // Deployer/6888
+store 35 // Deployer/6084
 dup
 int 32
 extract_uint64
-store 34 // bronze/6889
+store 34 // bronze/6085
 dup
 int 40
 extract_uint64
-store 33 // silver/6890
+store 33 // silver/6086
 dup
 int 48
 extract_uint64
-store 32 // gold/6891
+store 32 // gold/6087
 dup
 extract 56 32
-store 31 // Admin/6913
+store 31 // Admin/6109
 dup
 extract 88 24
-store 30 // coinPrices/6931
+store 30 // coinPrices/6127
 dup
 extract 112 1
 btoi
-store 29 // isPaused/6932
+store 29 // isPaused/6128
 dup
 extract 113 51
-store 26 // tokenInfos/6940
+store 26 // tokenInfos/6136
 dup
 int 164
 extract_uint64
-store 25 // netBalance/6941
+store 25 // netBalance/6137
 dup
 extract 172 17
-store 16 // tokInfo/12857
+store 16 // tokInfo/11724
 dup
 int 189
 extract_uint64
-store 15 // v12858
+store 15 // v11725
 dup
 int 197
 extract_uint64
-store 14 // v12860
+store 14 // v11727
 dup
 int 205
 extract_uint64
-store 13 // v12862
+store 13 // v11729
 extract 213 24
-store 12 // v12863
+store 12 // v11730
 retsub
 l21_LF_checkTxn_False:
 // resource: R_Txn

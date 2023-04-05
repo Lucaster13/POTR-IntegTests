@@ -1,5 +1,5 @@
 import { loadStdlib } from "@reach-sh/stdlib";
-import { Time } from "@reach-sh/stdlib/dist/types/shared_impl";
+import type { Time } from "@reach-sh/stdlib/dist/types/shared_impl";
 
 type ReachStdlib = ReturnType<typeof loadStdlib>;
 type BigNumber = Time;

@@ -1,4 +1,4 @@
-import { ACCOUNTS, Coin, PAGES, RERENDER_TIMEOUT, TestIds } from "../../constants";
+import { ACCOUNTS, Coin, PAGES, RERENDER_TIMEOUT, TestIds } from "../constants";
 
 describe("Page - Ruins", () => {
     const getRuinsInterfaceIds = () => TestIds.Ruins.interface;

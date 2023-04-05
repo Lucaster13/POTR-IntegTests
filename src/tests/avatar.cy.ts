@@ -1,4 +1,4 @@
-import { RERENDER_TIMEOUT, TestIds } from "../../constants";
+import { RERENDER_TIMEOUT, TestIds } from "../constants";
 
 describe("Component - Avatar", () => {
     beforeEach(() => {

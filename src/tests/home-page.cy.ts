@@ -1,4 +1,4 @@
-import { PAGES, TestIds } from "../../constants";
+import { PAGES, TestIds } from "../constants";
 
 describe("Page - Home", () => {
     before(() => {

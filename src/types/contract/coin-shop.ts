@@ -1,4 +1,4 @@
-import { EventMap, EventStream } from "@reach-sh/stdlib/dist/types/shared_impl";
+import type { EventMap, EventStream } from "@reach-sh/stdlib/dist/types/shared_impl";
 import { CoinIds, Coins } from "../coin";
 import { AsaId, NetworkAddress } from "../network";
 import { DeployerInterface, ApiFn, ContractHandle, Maybe, ParticipantInterface, ViewFn } from "./base";

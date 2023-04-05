@@ -10,9 +10,9 @@ export default defineConfig({
     },
     e2e: {
         port: CYPRESS_PORT,
-        supportFile: "./src/cypress/support/e2e.ts",
+        supportFile: "./src/cypress/commands.ts",
         baseUrl: `http://localhost:${FRONTEND_PORT}/#`,
-        specPattern: "./src/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+        specPattern: "./src/tests/**/*.cy.{js,jsx,ts,tsx}",
         watchForFileChanges: false,
         defaultCommandTimeout: 30000,
     },

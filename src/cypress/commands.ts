@@ -23,8 +23,7 @@ import {
     updateContractId,
     withdrawCoinShop,
     writeToJson,
-} from "../../utils";
-import "./commands";
+} from "../utils";
 
 Cypress.Commands.add("byTestId", { prevSubject: "optional" }, byTestId);
 Cypress.Commands.addAll({

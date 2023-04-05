@@ -23,8 +23,9 @@ interface ContractHandle {
     getInfo: () => Promise<ContractId>;
 }
 
-type ApiFn = (...x: any) => Promise<Maybe<any>>;
+type ApiFn = (...x: any) => Promise<any>;
+type ViewFn = () => Promise<any>;
 
 type Maybe<T> = ["Some" | "None", T];
 
-export { ContractName, DeployerInterface, ParticipantInterface, Maybe, ContractHandle, ApiFn };
+export { ContractName, DeployerInterface, ParticipantInterface, Maybe, ContractHandle, ApiFn, ViewFn };

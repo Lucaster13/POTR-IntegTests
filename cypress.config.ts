@@ -1,5 +1,5 @@
 import { defineConfig } from "cypress";
-import { CYPRESS_PORT } from "./src/constants";
+import { CYPRESS_PORT, FRONTEND_PORT } from "./src/constants";
 
 export default defineConfig({
     component: {
@@ -9,11 +9,11 @@ export default defineConfig({
         },
     },
     e2e: {
-        setupNodeEvents(on, config) {
-            // implement node event listeners here
-        },
         port: CYPRESS_PORT,
         supportFile: "./src/cypress/support/e2e.ts",
+        baseUrl: `http://localhost:${FRONTEND_PORT}/#`,
         specPattern: "./src/cypress/e2e/**/*.cy.{js,jsx,ts,tsx}",
+        watchForFileChanges: false,
+        defaultCommandTimeout: 30000,
     },
 });

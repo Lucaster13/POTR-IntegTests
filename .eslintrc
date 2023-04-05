@@ -5,8 +5,9 @@
     },
     "settings": {
         "import/resolver": {
-            "typescript": true,
-            "node": true
+            "node": {
+                "extensions": [".ts"]
+            }
         }
     },
     "parser": "@typescript-eslint/parser",
@@ -15,16 +16,34 @@
         "es6": true,
         "node": true
     },
-    "plugins": ["@typescript-eslint"],
+    "plugins": ["@typescript-eslint", "unused-imports", "import"],
     "extends": [
         "eslint:recommended",
         "plugin:json/recommended",
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:import/typescript",
         "plugin:cypress/recommended",
+        "plugin:import/typescript",
         "airbnb",
         "prettier"
     ],
-    "rules": {}
+    "rules": {
+        "unused-imports/no-unused-imports": "error",
+        "import/extensions": "off",
+        "consistent-return": "off",
+        "no-shadow": "off",
+        "@typescript-eslint/no-unused-vars": "warn",
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-empty-function": "off",
+        "cypress/no-unnecessary-waiting": "off",
+        "import/prefer-default-export": "off",
+        "no-use-before-define": "off",
+        "no-param-reassign": "off",
+        "no-await-in-loop": "off",
+        "camelcase": "off",
+        "@typescript-eslint/no-namespace": "off",
+        "no-undef": "off",
+        "import/no-absolute-path": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
 }

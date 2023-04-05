@@ -3,17 +3,22 @@ export default {
         container: "landing-page",
         dismissButton: "landing-page-dismiss-button",
     },
-    Nav: { container: "nav", title: "nav-title", toggle: "nav-toggle" },
+    Nav: {
+        container: "nav",
+        title: "nav-title",
+        toggle: "nav-toggle",
+        avatar: "nav-avatar",
+        walletButton: "nav-wallet-button",
+    },
     CoinDisplay: {
         coinBal: "coin-display-bal",
     },
-    HomePage: {
+    Home: {
         dashboard: {
             signIn: "dashboard-sign-in",
             profile: {
                 container: "dashboard-profile",
-                button: "dashboard-profile-button",
-                avatar: "dashboard-profile-avatar",
+                avatar: "dashboard-avatar",
             },
             ruins: {
                 container: "dashboard-ruins",
@@ -28,6 +33,36 @@ export default {
             castle: "explore-castle",
             battle: "explore-battle",
             shop: "explore-shop",
+        },
+    },
+    Ruins: {
+        container: "ruins-container",
+        noWallet: "ruins-no-wallet",
+        arrivingAtTheRuins: "ruins-arriving-at-ruins",
+        talkingToTheBlockchain: "ruins-talking-to-the-blockchain",
+        history: {
+            container: "ruins-history",
+            event: { container: "ruins-event", type: "ruins-event-type" },
+        },
+        interface: {
+            container: "ruins-interface",
+            status: "ruins-status",
+            bronzePurchase: {
+                container: "ruins-bronze-purchase",
+                supply: "ruins-bronze-supply",
+                price: "ruins-bronze-price",
+            },
+            silverPurchase: {
+                container: "ruins-silver-purchase",
+                supply: "ruins-silver-supply",
+                price: "ruins-silver-price",
+            },
+            goldPurchase: {
+                container: "ruins-gold-purchase",
+                supply: "ruins-gold-supply",
+                price: "ruins-gold-price",
+            },
+            purchaseButton: "ruins-purchase-button",
         },
     },
     WalletConnectModal: {

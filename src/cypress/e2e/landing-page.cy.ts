@@ -1,11 +1,11 @@
-import { HOME_PAGE, TestIds } from "../../constants";
+import { PAGES, TestIds } from "../../constants";
 
 describe("Page - Landing", () => {
     beforeEach(() => {
         cy.viewport("macbook-16");
     });
     it("should show landing page when is first time visitor", () => {
-        cy.visit(HOME_PAGE);
+        cy.visit(PAGES.Home);
         cy.byTestId(TestIds.LandingPage.container).should("be.visible");
     });
 

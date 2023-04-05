@@ -1,0 +1,3 @@
+const RERENDER_TIMEOUT = 7500;
+
+export { RERENDER_TIMEOUT };

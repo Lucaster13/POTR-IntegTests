@@ -16,7 +16,7 @@ interface ReachAccount {
     networkAccount: NetworkAccount;
     contract: <T>(b: any, info?: ContractId | BigNumber) => Promise<T>;
     balanceOf: (asa?: AsaId) => Promise<BigNumber>;
-    acceptToken: (asa: AsaId) => Promise<void>;
+    tokenAccept: (asa: AsaId) => Promise<void>;
     tokenAccepted: (asa: AsaId) => Promise<boolean>;
 }
 

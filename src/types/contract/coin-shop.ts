@@ -1,7 +1,7 @@
 import { EventMap, EventStream } from "@reach-sh/stdlib/dist/types/shared_impl";
 import { CoinIds, Coins } from "../coin";
 import { AsaId, NetworkAddress } from "../network";
-import { DeployerInterface, ApiFn, ContractHandle, Maybe, ParticipantInterface } from "./base";
+import { DeployerInterface, ApiFn, ContractHandle, Maybe, ParticipantInterface, ViewFn } from "./base";
 
 /*
 
@@ -30,20 +30,20 @@ type CoinShopIsPaused = boolean;
 
 // interfaces for APIS
 interface CoinShopControllerApi extends Record<CoinShopControllerApiFunction, ApiFn> {
-    restock: (sup: CoinShopSupply) => Promise<Maybe<boolean>>;
-    set_prices: (pr: CoinShopPrices) => Promise<Maybe<boolean>>;
-    toggle_pause: () => Promise<Maybe<boolean>>;
-    terminate: () => Promise<Maybe<boolean>>;
-    withdraw: () => Promise<Maybe<boolean>>;
+    restock: (sup: CoinShopSupply) => Promise<boolean>;
+    set_prices: (pr: CoinShopPrices) => Promise<boolean>;
+    toggle_pause: () => Promise<boolean>;
+    terminate: () => Promise<boolean>;
+    withdraw: () => Promise<boolean>;
 }
 interface CoinShopBuyerApi extends Record<CoinShopBuyerApiFunction, ApiFn> {
-    purchase_bronze: () => Promise<Maybe<boolean>>;
-    purchase_silver: () => Promise<Maybe<boolean>>;
-    purchase_gold: () => Promise<Maybe<boolean>>;
+    purchase_bronze: () => Promise<boolean>;
+    purchase_silver: () => Promise<boolean>;
+    purchase_gold: () => Promise<boolean>;
 }
 
 // interfaces for View
-interface CoinShopViews extends Record<CoinShopView, ApiFn> {
+interface CoinShopViews extends Record<CoinShopView, ViewFn> {
     coin_supply: () => Promise<Maybe<CoinShopSupply>>;
     coin_prices: () => Promise<Maybe<CoinShopPrices>>;
     is_paused: () => Promise<Maybe<boolean>>;

@@ -5,3 +5,5 @@ export { default as Selectors } from "./selectors";
 export * from "./urls";
 export * from "./coin";
 export * from "./.secrets";
+export * from "./contract";
+export * from "./timeouts";

@@ -21,7 +21,6 @@ describe("Page - Home", () => {
             cy.url().should("contain", PAGES.Profile);
         });
         it("should show the correct ruins status based on coin shop isPaused flag", () => {
-            cy.cleanCoinShop();
             cy.connectWallet();
             cy.byTestId(TestIds.Home.dashboard.ruins.status).contains(/^active$/);
             cy.toggleCoinShopPause();
@@ -30,7 +29,6 @@ describe("Page - Home", () => {
             cy.byTestId(TestIds.Home.dashboard.ruins.status).contains(/^active$/, { timeout: 6000 });
         });
         it("should display correct balances when restocking ruins", () => {
-            cy.cleanCoinShop();
             cy.connectWallet();
             cy.byTestId(TestIds.Home.dashboard.ruins.ruinsCoinSupply)
                 .byTestId(TestIds.CoinDisplay.coinBal)
@@ -53,9 +51,11 @@ describe("Page - Home", () => {
                     cy.wrap($bals.eq(1)).contains("20x");
                     cy.wrap($bals.eq(2)).contains("30x");
                 });
+
+            // cleanup
+            cy.withdrawCoinShop();
         });
         it("should display correct balances when user has coins in wallet", () => {
-            cy.cleanCoinShop();
             // give user coins
             cy.fundUser(0, [1, 2, 3], []);
             cy.connectWallet();
@@ -68,6 +68,9 @@ describe("Page - Home", () => {
                     cy.wrap($bals.eq(1)).contains("2x");
                     cy.wrap($bals.eq(2)).contains("3x");
                 });
+
+            // cleanup
+            cy.cleanUserCoins();
         });
     });
     describe("Feature - ExploreContainers", () => {

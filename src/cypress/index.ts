@@ -25,6 +25,7 @@ import {
     updateContractId,
     withdrawCoinShop,
     writeToJson,
+    cleanUserCoins,
 } from "../utils";
 
 Cypress.Commands.add("byTestId", { prevSubject: "optional" }, byTestId);
@@ -52,6 +53,7 @@ Cypress.Commands.addAll({
     readFromJson,
     writeToJson,
     purchaseCoin,
+    cleanUserCoins,
     silenceXhr,
 });
 
@@ -83,6 +85,7 @@ declare global {
             writeToJson: typeof writeToJson;
             purchaseCoin: typeof purchaseCoin;
             silenceXhr: typeof silenceXhr;
+            cleanUserCoins: typeof cleanUserCoins;
         }
     }
 }

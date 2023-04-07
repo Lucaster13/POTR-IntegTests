@@ -21,7 +21,7 @@ describe("Page - Ruins", () => {
         cy.byTestId(TestIds.Ruins.noWallet).find(".btn-tertiary").should("be.visible").contains("go home").click();
         cy.url().should("contain", PAGES.Home);
     });
-    it.only("should show proper loading screens and ruins page if user connects wallet on no wallet page", () => {
+    it("should show proper loading screens and ruins page if user connects wallet on no wallet page", () => {
         cy.stubPrompt(ACCOUNTS.TestNet.user.traveller.addr);
         cy.byTestId(TestIds.Ruins.noWallet)
             .should("be.visible")
@@ -58,46 +58,13 @@ describe("Page - Ruins", () => {
         cy.byTestId(silverPurchase.container).byTestId(purchaseButton).should("have.attr", "disabled");
         cy.byTestId(goldPurchase.container).byTestId(purchaseButton).should("have.attr", "disabled");
     });
-    it("should let user purchase each type of coin and show updates properly", () => {
-        const { bronzePurchase, silverPurchase, goldPurchase } = getRuinsInterfaceIds();
-        const { event } = TestIds.Ruins.history;
-        // fund user, restock coin shop and connect wallet
-        cy.restockCoinShop([1, 2, 3]);
-        cy.connectWallet();
 
-        // purchase coins
-        cy.byTestId(bronzePurchase.container).should("be.visible").contains("10");
-        cy.byTestId(bronzePurchase.supply).contains("1");
-        cy.byTestId(silverPurchase.container).should("be.visible").contains("20");
-        cy.byTestId(silverPurchase.supply).contains("2");
-        cy.byTestId(goldPurchase.container).should("be.visible").contains("30");
-        cy.byTestId(goldPurchase.supply).contains("3");
-
-        cy.purchaseCoin(Coin.BRONZE)
-            .wait(RERENDER_TIMEOUT)
-            .purchaseCoin(Coin.SILVER)
-            .wait(RERENDER_TIMEOUT)
-            .purchaseCoin(Coin.GOLD)
-            .wait(RERENDER_TIMEOUT);
-
-        cy.byTestId(event.container).then(($events) => {
-            // check most recent event
-            cy.wrap($events.eq(0)).contains("Purchase");
-            cy.wrap($events.eq(0)).contains("Gold");
-            cy.wrap($events.eq(1)).contains("Purchase");
-            cy.wrap($events.eq(1)).contains("Silver");
-            cy.wrap($events.eq(2)).contains("Purchase");
-            cy.wrap($events.eq(2)).contains("Bronze");
-        });
-
-        cy.withdrawCoinShop();
-    });
     it("should show price update properly", () => {
         const { bronzePurchase, silverPurchase, goldPurchase } = getRuinsInterfaceIds();
 
         // change coin shop prices and load ruins
-        cy.priceChangeCoinShop([1, 2, 3]);
         cy.connectWallet();
+        cy.priceChangeCoinShop([1, 2, 3]);
 
         // check that prices are updated for coin purchase containers
         cy.byTestId(bronzePurchase.price).should("be.visible").contains("1", { timeout: RERENDER_TIMEOUT });
@@ -114,18 +81,77 @@ describe("Page - Ruins", () => {
             cy.wrap(newestEvent).contains("Gold: 3");
         });
     });
+    it("should let user purchase all coins and show updates properly", () => {
+        const { bronzePurchase, silverPurchase, goldPurchase } = getRuinsInterfaceIds();
+        const { event } = TestIds.Ruins.history;
+        // fund user, restock coin shop and connect wallet
+        cy.connectWallet();
+        cy.restockCoinShop([1, 1, 1]);
+
+        // check containers exist and have correct supplies
+        [bronzePurchase, silverPurchase, goldPurchase].forEach(({ container, supply }) => {
+            cy.byTestId(container).should("be.visible");
+            cy.byTestId(supply).contains("1");
+        });
+
+        // purchase each coin and wait for events to update
+        cy.byTestId(event.container)
+            .then(($events) => $events.length)
+            // expected number of events is 1 + current number of events
+            .then((numEvents) => {
+                // purchase coin
+                cy.purchaseCoin(Coin.BRONZE);
+
+                // wait until expeectedNumberOfEvents is reached
+                const newNumEvents = numEvents + 1;
+                return cy
+                    .byTestId(event.container)
+                    .should("have.length", newNumEvents)
+                    .then(() => newNumEvents);
+            })
+            .then((numEvents) => {
+                // purchase coin
+                cy.purchaseCoin(Coin.SILVER);
+
+                // wait until expeectedNumberOfEvents is reached
+                const newNumEvents = numEvents + 1;
+                return cy
+                    .byTestId(event.container)
+                    .should("have.length", newNumEvents)
+                    .then(() => newNumEvents);
+            })
+            .then((numEvents) => {
+                // purchase coin
+                cy.purchaseCoin(Coin.GOLD);
+
+                // wait until expeectedNumberOfEvents is reached
+                const newNumEvents = numEvents + 1;
+                cy.byTestId(event.container).should("have.length", newNumEvents);
+            });
+
+        cy.byTestId(event.container).then(($events) => {
+            // assert that all purchase events are properly shown
+            cy.wrap($events.eq(0)).contains("Purchase");
+            cy.wrap($events.eq(0)).contains("Gold");
+            cy.wrap($events.eq(1)).contains("Purchase");
+            cy.wrap($events.eq(1)).contains("Silver");
+            cy.wrap($events.eq(2)).contains("Purchase");
+            cy.wrap($events.eq(2)).contains("Bronze");
+        });
+    });
+
     it("should show isPaused toggle properly", () => {
         // pause coin shop and open ruins
-        cy.toggleCoinShopPause();
-        cy.connectWallet();
+        // cy.connectWallet();
+        // cy.toggleCoinShopPause();
         // TODO
     });
     it("should show supply withdrawal properly", () => {
         const { bronzePurchase, silverPurchase, goldPurchase } = getRuinsInterfaceIds();
 
         // restock and then withdraw from coin shop
-        cy.restockCoinShop([1, 2, 3]).then(cy.withdrawCoinShop);
         cy.connectWallet();
+        cy.withdrawCoinShop();
 
         cy.byTestId(bronzePurchase.supply).should("be.visible").contains("0", { timeout: RERENDER_TIMEOUT });
         cy.byTestId(silverPurchase.supply).should("be.visible").contains("0");
@@ -142,8 +168,8 @@ describe("Page - Ruins", () => {
         const { bronzePurchase, silverPurchase, goldPurchase, purchaseButton } = getRuinsInterfaceIds();
 
         // restock the coin shop and make sure the supplies are updated
-        cy.restockCoinShop([1, 2, 3]);
         cy.connectWallet();
+        cy.restockCoinShop([1, 2, 3]);
 
         // check coin purchase containers
         cy.byTestId(bronzePurchase.supply).should("be.visible").contains("1");

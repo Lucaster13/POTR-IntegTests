@@ -135,6 +135,31 @@ function cleanCoinShop() {
         );
 }
 
+function cleanUserCoins() {
+    return cy
+        .log("cleaning user coins")
+        .getAsaIds()
+        .then(async (asaIds) => {
+            const { reach, admin, user } = await makeReach();
+
+            const coinIds = asaIds.TestNet.coin;
+            const coinBals = await user.balancesOf(asaIds.TestNet.coin);
+
+            // send coins back to admin account
+            await Promise.all(
+                coinBals.map(async (bal, idx) => {
+                    if (bal.isZero()) {
+                        cy.log("skipping user coin transfer - 0 bal");
+                        return;
+                    }
+                    cy.log(`transferring ${bal} ${COIN_TYPES[idx]} coin(s) to admin`);
+                    await reach.transfer(user, admin, bal, coinIds[idx]);
+                    cy.log(`successfully transferred ${bal} ${COIN_TYPES[idx]} coin(s) to admin`);
+                }),
+            );
+        });
+}
+
 function deployCoinShopContract() {
     return cy
         .destroyCoinShopContract()
@@ -229,6 +254,7 @@ export {
     cleanCoinShop,
     withdrawCoinShop,
     deployCoinShopContract,
+    cleanUserCoins,
     priceChangeCoinShop,
     destroyCoinShopContract,
 };

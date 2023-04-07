@@ -4,3 +4,4 @@ export * from "./potr-helpers";
 export * from "./json";
 export * from "./user-helpers";
 export * from "./cypress-helpers";
+export * from "./common";

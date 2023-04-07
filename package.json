@@ -3,6 +3,7 @@
     "version": "1.0.0",
     "scripts": {
         "start": "cypress open",
+        "test": "cypress run",
         "lint": "eslint .",
         "clean": "rm -rf node_modules"
     },

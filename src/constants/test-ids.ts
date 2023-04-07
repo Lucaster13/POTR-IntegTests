@@ -1,3 +1,5 @@
+import { Social } from "./social";
+
 export default {
     LandingPage: {
         container: "landing-page",
@@ -9,6 +11,15 @@ export default {
         toggle: "nav-toggle",
         avatar: "nav-avatar",
         walletButton: "nav-wallet-button",
+        disconnectButton: "nav-disconnect-button",
+        link: {
+            home: "nav-link-home",
+            ruins: "nav-link-ruins",
+            summon: "nav-link-summon",
+            castle: "nav-link-castle",
+            [Social.DISCORD]: `nav-link-${Social.DISCORD}`,
+            [Social.TWITTER]: `nav-link-${Social.TWITTER}`,
+        },
     },
     CoinDisplay: {
         coinBal: "coin-display-bal",

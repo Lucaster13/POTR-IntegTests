@@ -15,7 +15,7 @@ async function makeReach() {
     }
 
     if (!user) {
-        user = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.user.mnemonic);
+        user = await reach.newAccountFromMnemonic(ACCOUNTS.TestNet.user.traveller.mnemonic);
     }
 
     return { reach, admin, user };

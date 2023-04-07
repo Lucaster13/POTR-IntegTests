@@ -2,11 +2,19 @@ import type Sinon from "cypress/types/sinon";
 import { TestIds, PAGES } from "../constants";
 
 // HELPER TO SEARCH FOR ELEMENTS BY TEST-ID
-function byTestId(subject, id: string) {
+function byTestId(subject, ids: string | string[]) {
+    const selector = Array.isArray(ids)
+        ? ids
+              .reduce((selector, id) => `${selector} [data-testid="${id}"]`, "")
+              .trim()
+              .replace(" ", ",") // need to comma seperate
+        : `[data-testid="${ids}"]`;
+
     if (subject) {
-        return cy.wrap(subject).find(`[data-testid="${id}"]`);
+        return cy.wrap(subject).find(selector);
     }
-    return cy.get(`[data-testid="${id}"]`);
+
+    return cy.get(selector);
 }
 
 // STUB PROMPT FOR CONNECTING WALLET / SIGNING TXNS
@@ -35,4 +43,8 @@ function dismissLandingPage() {
     return cy.byTestId(TestIds.LandingPage.container).should("not.exist");
 }
 
-export { resizeToDefault, dismissLandingPage, stubPrompt, byTestId };
+function silenceXhr() {
+    return cy.intercept("v2/**/*", { log: false });
+}
+
+export { resizeToDefault, dismissLandingPage, stubPrompt, byTestId, silenceXhr };

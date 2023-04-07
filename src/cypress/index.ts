@@ -1,3 +1,4 @@
+import { ACCOUNTS } from "../constants";
 import {
     byTestId,
     cleanAlgo,
@@ -18,6 +19,7 @@ import {
     readFromJson,
     resizeToDefault,
     restockCoinShop,
+    silenceXhr,
     stubPrompt,
     toggleCoinShopPause,
     updateContractId,
@@ -50,12 +52,13 @@ Cypress.Commands.addAll({
     readFromJson,
     writeToJson,
     purchaseCoin,
+    silenceXhr,
 });
 
 declare global {
     namespace Cypress {
         interface Chainable {
-            byTestId: (id: string) => ReturnType<typeof byTestId>;
+            byTestId: (ids: string | string[]) => ReturnType<typeof byTestId>;
             stubPrompt: typeof stubPrompt;
             resizeToDefault: typeof resizeToDefault;
             dismissLandingPage: typeof dismissLandingPage;
@@ -79,14 +82,26 @@ declare global {
             readFromJson: typeof readFromJson;
             writeToJson: typeof writeToJson;
             purchaseCoin: typeof purchaseCoin;
+            silenceXhr: typeof silenceXhr;
         }
     }
 }
 
 // silence http logs
 before(() => {
-    cy.intercept("/v2/**/*", { log: false });
-    // deploy contract
+    cy.silenceXhr();
+    // stub prompt to return traveller address
+    cy.stubPrompt(ACCOUNTS.TestNet.user.traveller.addr);
+    // fund user to help with any cleanup for what may have been left over from previous tests
+    cy.fundUser(200, [0, 0, 0], []);
+});
+
+beforeEach(() => {
+    cy.resizeToDefault();
+});
+
+after(() => {
+    cy.silenceXhr();
+    cy.cleanAlgo();
     cy.destroyCoinShopContract();
-    cy.deployCoinShopContract();
 });

@@ -1,26 +1,16 @@
 import { PAGES, TestIds } from "../constants";
 
 describe("Page - Home", () => {
-    before(() => {
-        // fund user to help with any cleanup for what may have been left over from previous tests
-        cy.fundUser(10, [0, 0, 0], []);
-    });
-
     beforeEach(() => {
-        cy.cleanCoinShop();
-        cy.cleanPotrs();
-        cy.cleanAlgo();
-        cy.resizeToDefault();
+        cy.silenceXhr();
         cy.dismissLandingPage();
     });
 
-    after(() => {
-        cy.cleanCoinShop();
-        cy.cleanPotrs();
-        cy.cleanAlgo();
-    });
-
     describe("Feature - Dashboard", () => {
+        before(() => {
+            // deploy contract
+            cy.deployCoinShopContract();
+        });
         it("should show sign in page when user wallet is not connected", () => {
             cy.byTestId(TestIds.Home.dashboard.signIn).should("be.visible");
             cy.byTestId(TestIds.Home.dashboard.profile.container).should("not.exist");
@@ -31,6 +21,7 @@ describe("Page - Home", () => {
             cy.url().should("contain", PAGES.Profile);
         });
         it("should show the correct ruins status based on coin shop isPaused flag", () => {
+            cy.cleanCoinShop();
             cy.connectWallet();
             cy.byTestId(TestIds.Home.dashboard.ruins.status).contains(/^active$/);
             cy.toggleCoinShopPause();
@@ -39,6 +30,7 @@ describe("Page - Home", () => {
             cy.byTestId(TestIds.Home.dashboard.ruins.status).contains(/^active$/, { timeout: 6000 });
         });
         it("should display correct balances when restocking ruins", () => {
+            cy.cleanCoinShop();
             cy.connectWallet();
             cy.byTestId(TestIds.Home.dashboard.ruins.ruinsCoinSupply)
                 .byTestId(TestIds.CoinDisplay.coinBal)
@@ -63,8 +55,9 @@ describe("Page - Home", () => {
                 });
         });
         it("should display correct balances when user has coins in wallet", () => {
+            cy.cleanCoinShop();
             // give user coins
-            cy.fundUser(10, [1, 2, 3], []);
+            cy.fundUser(0, [1, 2, 3], []);
             cy.connectWallet();
             // check to ensure the correct balances are shown
             cy.byTestId(TestIds.Home.dashboard.ruins.userCoinSupply)

@@ -32,7 +32,7 @@ function getTestUserBalance() {
     return cy.log("getting test user balance").then(async () => {
         const { reach } = await makeReach();
         return reach
-            .newAccountFromMnemonic(ACCOUNTS.TestNet.user.mnemonic)
+            .newAccountFromMnemonic(ACCOUNTS.TestNet.user.traveller.mnemonic)
             .then((a: ReachAccount) => a.balanceOf())
             .then((bal) => reach.formatCurrency(bal, 2));
     });
@@ -76,8 +76,8 @@ function fundUser(algo: number, coins: [number, number, number], potrs: AsaId[])
         });
 }
 
-function connectWallet() {
-    cy.stubPrompt(ACCOUNTS.TestNet.user.addr);
+function connectWallet(addr: string = ACCOUNTS.TestNet.user.traveller.addr) {
+    cy.stubPrompt(addr);
 
     // find wallet connect button
     cy.byTestId(TestIds.Nav.walletButton).click();

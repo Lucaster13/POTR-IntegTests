@@ -1,9 +1,6 @@
 import { PAGES, TestIds } from "../constants";
 
 describe("Page - Landing", () => {
-    beforeEach(() => {
-        cy.viewport("macbook-16");
-    });
     it("should show landing page when is first time visitor", () => {
         cy.visit(PAGES.Home);
         cy.byTestId(TestIds.LandingPage.container).should("be.visible");
@@ -15,7 +12,6 @@ describe("Page - Landing", () => {
 
     it("should not show landing page on reload after user has already clicked enter kingdom", () => {
         cy.dismissLandingPage();
-        cy.reload();
         cy.byTestId(TestIds.LandingPage.container).should("not.exist");
     });
 

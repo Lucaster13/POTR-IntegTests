@@ -2,23 +2,15 @@ import { ACCOUNTS, Coin, PAGES, RERENDER_TIMEOUT, TestIds } from "../constants";
 
 describe("Page - Ruins", () => {
     const getRuinsInterfaceIds = () => TestIds.Ruins.interface;
-
     before(() => {
-        cy.clearAllCookies();
-        cy.clearAllLocalStorage();
-        cy.clearAllSessionStorage();
-        cy.cleanAlgo();
-        cy.fundUser(100, [0, 0, 0], []);
+        // deploy contract
+        cy.deployCoinShopContract();
     });
 
     beforeEach(() => {
-        cy.resizeToDefault();
+        cy.silenceXhr();
         cy.dismissLandingPage();
         cy.visit(PAGES.Ruins);
-    });
-
-    after(() => {
-        cy.fundUser(10, [0, 0, 0], []).then(cy.destroyCoinShopContract).then(cy.cleanAlgo);
     });
 
     it("should show wallet not connected screen if wallet isn't connected", () => {
@@ -29,8 +21,8 @@ describe("Page - Ruins", () => {
         cy.byTestId(TestIds.Ruins.noWallet).find(".btn-tertiary").should("be.visible").contains("go home").click();
         cy.url().should("contain", PAGES.Home);
     });
-    it("should show proper loading screens and ruins page if user connects wallet on no wallet page", () => {
-        cy.stubPrompt(ACCOUNTS.TestNet.user.addr);
+    it.only("should show proper loading screens and ruins page if user connects wallet on no wallet page", () => {
+        cy.stubPrompt(ACCOUNTS.TestNet.user.traveller.addr);
         cy.byTestId(TestIds.Ruins.noWallet)
             .should("be.visible")
             .find(".btn-primary")
@@ -45,7 +37,6 @@ describe("Page - Ruins", () => {
     });
     it("should show correct user balance in ruins status", () => {
         cy.connectWallet();
-
         cy.getTestUserBalance().then((bal) => {
             cy.byTestId(getRuinsInterfaceIds().status).contains(bal, { timeout: RERENDER_TIMEOUT });
         });

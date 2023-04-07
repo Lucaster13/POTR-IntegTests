@@ -7,3 +7,4 @@ export * from "./coin";
 export * from "./.secrets";
 export * from "./contract";
 export * from "./timeouts";
+export * from "./social";

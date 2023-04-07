@@ -43,5 +43,6 @@
         "no-undef": "off",
         "import/no-absolute-path": "off",
         "@typescript-eslint/no-explicit-any": "off"
-    }
+    },
+    "overrides": [{ "files": "./src/cypress/index.ts", "rules": { "func-names": "off" } }]
 }

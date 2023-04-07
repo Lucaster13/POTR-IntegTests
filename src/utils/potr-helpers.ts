@@ -17,7 +17,7 @@ function cleanPotrs() {
                 .then((p) => ({ algodClient: p.algodClient as Algodv2, indexer: p.indexer as Indexer }));
 
             // fetch user account info
-            const accountInfo = await algodClient.accountInformation(ACCOUNTS.TestNet.user.addr).do();
+            const accountInfo = await algodClient.accountInformation(ACCOUNTS.TestNet.user.traveller.addr).do();
 
             // filter owned potr ids
             const ownedPotrIds = accountInfo.assets
@@ -44,7 +44,7 @@ function cleanPotrs() {
 
 const RESPONSE_LIMIT = 30000;
 
-function getProtectorAssets() {
+function getProtectorAssets(addr: string = ACCOUNTS.TestNet.user.traveller.addr) {
     return cy
         .log("Getting POTRS in user wallet")
         .getAsaIds()
@@ -55,7 +55,7 @@ function getProtectorAssets() {
                 .then((p) => ({ algodClient: p.algodClient as Algodv2, indexer: p.indexer as Indexer }));
 
             try {
-                const accountInfo = await algodClient.accountInformation(ACCOUNTS.TestNet.user.addr).do();
+                const accountInfo = await algodClient.accountInformation(addr).do();
                 // filter only potrs with balance > 0 and extract asa Id
                 const ownedPotrIds = accountInfo.assets
                     .filter(({ amount }) => amount > 0)

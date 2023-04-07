@@ -137,6 +137,7 @@ function cleanCoinShop() {
 
 function deployCoinShopContract() {
     return cy
+        .destroyCoinShopContract()
         .log(`Running coin shop deploy on: algo-${REACH_NETWORK.toUpperCase()}`)
         .getAsaIds()
         .then(async (asaIds) => {
@@ -177,6 +178,7 @@ function destroyCoinShopContract() {
         .then(async (contractId) => {
             if (!contractId) {
                 cy.log("no contract skipping cleanup");
+                return;
             }
 
             // attach to contract as admin
@@ -214,7 +216,7 @@ function destroyCoinShopContract() {
 function purchaseCoin(coin: Coin) {
     const { purchaseButton } = TestIds.Ruins.interface;
     // stub prompt to give user mnemonic
-    cy.stubPrompt(ACCOUNTS.TestNet.user.mnemonic);
+    cy.stubPrompt(ACCOUNTS.TestNet.user.traveller.mnemonic);
     // get purchase container
     const { container } = TestIds.Ruins.interface[`${coin}Purchase`];
     return cy.byTestId(container).should("be.visible").byTestId(purchaseButton).click();
